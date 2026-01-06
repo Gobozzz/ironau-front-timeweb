@@ -14,6 +14,7 @@ import { LevelLesson } from "@components/shared/LevelLesson/LevelLesson";
 import { getRealId } from "@helpers/links";
 import { getCountLessonsWord } from "@helpers/words";
 import { CourseStartLearnButton } from "@components/features/learning/CourseStartLearnButton";
+import { SITE_NAME } from "@/app/constants";
 
 export async function generateMetadata({
   params,
@@ -47,7 +48,7 @@ export async function generateMetadata({
       type: "website",
       locale: "ru_RU",
       url: COURSE_FLOW(course.id),
-      siteName: process.env.NEXT_PUBLIC_SITE_NAME,
+      siteName: SITE_NAME,
       title: `${course.title} | Изучение осетинского языка`,
       description: `${course.content.slice(
         0,

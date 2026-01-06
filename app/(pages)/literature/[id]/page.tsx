@@ -11,6 +11,7 @@ import FileIcon from "@/public/icons/file.svg";
 import Link from "next/link";
 import { EditorShow } from "@/app/components/shared/Editor/EditorShow/EditorShow";
 import { ArrowBack } from "@/app/components/ui/ArrowBack/ArrowBack";
+import { SITE_NAME } from "@/app/constants";
 
 export async function generateMetadata({
   params,
@@ -45,7 +46,7 @@ export async function generateMetadata({
       type: "website",
       locale: "ru_RU",
       url: BILINGUAL_SHOW(literature.slug, literature.id),
-      siteName: process.env.NEXT_PUBLIC_SITE_NAME,
+      siteName: SITE_NAME,
       title: `${literature.title} | Изучение осетинского языка`,
       description: `${literature.description} | Изучение осетинского языка`,
       images: [imageOG],

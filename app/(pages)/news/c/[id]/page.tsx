@@ -5,6 +5,7 @@ import { NEWS_CATEGORY } from "@navigate";
 import { getRealId } from "@helpers/links";
 import { NewsIndex } from "@/app/components/features/news/NewsIndex/NewsIndex";
 import EmptyLayout from "@/app/components/layout/EmptyLayout";
+import { SITE_NAME } from "@/app/constants";
 
 export async function generateMetadata({
   params,
@@ -37,7 +38,7 @@ export async function generateMetadata({
       type: "website",
       locale: "ru_RU",
       url: NEWS_CATEGORY(category.slug, category.id),
-      siteName: process.env.NEXT_PUBLIC_SITE_NAME,
+      siteName: SITE_NAME,
       title: `${category.title} | Изучение осетинского языка`,
       description: `${category.title} | Изучение осетинского языка`,
       images: [imageOG],

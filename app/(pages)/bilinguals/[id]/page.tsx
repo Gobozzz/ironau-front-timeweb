@@ -7,6 +7,7 @@ import { getRealId } from "@helpers/links";
 import ShortLayout from "@/app/components/layout/ShortLayout";
 import { ShowTranslationsDesctop } from "@/app/components/features/bilinguals/ShowTranslations/ShowTranslationsDesctop";
 import { ArrowBack } from "@/app/components/ui/ArrowBack/ArrowBack";
+import { SITE_NAME } from "@/app/constants";
 
 export async function generateMetadata({
   params,
@@ -41,7 +42,7 @@ export async function generateMetadata({
       type: "website",
       locale: "ru_RU",
       url: BILINGUAL_SHOW(bilingual.slug, bilingual.id),
-      siteName: process.env.NEXT_PUBLIC_SITE_NAME,
+      siteName: SITE_NAME,
       title: `${bilingual.title} | Изучение осетинского языка`,
       description: `Перевод "${bilingual.title}" на осетинский язык | Изучение осетинского языка`,
       images: [imageOG],

@@ -7,6 +7,7 @@ import { getRealId } from "@helpers/links";
 import { EditorShow } from "@/app/components/shared/Editor/EditorShow/EditorShow";
 import { ArrowBack } from "@/app/components/ui/ArrowBack/ArrowBack";
 import IndexLayout from "@/app/components/layout/IndexLayout";
+import { SITE_NAME } from "@/app/constants";
 
 export async function generateMetadata({
   params,
@@ -39,7 +40,7 @@ export async function generateMetadata({
       type: "website",
       locale: "ru_RU",
       url: NEWS_SHOW(news.slug, news.id),
-      siteName: process.env.NEXT_PUBLIC_SITE_NAME,
+      siteName: SITE_NAME,
       title: `${news.title} | Новости Осетии`,
       description: `${news.description} | Новости Осетии`,
       images: [imageOG],
