@@ -1,0 +1,31 @@
+.question {
+  font-size: 20px;
+  margin-bottom: 24px;
+  text-align: center;
+  color: var(--black);
+}
+
+.buttons {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  gap: 24px;
+}
+
+.button_yes {
+  padding: 16px;
+  border-radius: 12px;
+  background-color: var(--blue);
+  font-size: 16px;
+  font-family: var(--font-text-medium);
+  color: var(--white);
+}
+
+.button_no {
+  padding: 16px;
+  border-radius: 12px;
+  background-color: var(--white);
+  font-size: 16px;
+  font-family: var(--font-text-medium);
+  color: var(--black);
+}

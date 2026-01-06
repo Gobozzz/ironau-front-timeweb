@@ -1,0 +1,284 @@
+.text_editor {
+  background-color: rgba(211, 211, 211, 0.24);
+  padding: 20px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-height: 100vh;
+  overflow-y: auto;
+}
+
+.text_editor h1 {
+  font-size: clamp(1.875rem, 1.75rem + 0.63vw, 2.5rem);
+  line-height: clamp(1.875rem, 1.75rem + 0.63vw, 2.5rem);
+}
+
+.text_editor h2 {
+  font-size: clamp(1.563rem, 1.438rem + 0.63vw, 2.188rem);
+  line-height: clamp(1.563rem, 1.438rem + 0.63vw, 2.188rem);
+}
+.text_editor h3 {
+  font-size: clamp(1.25rem, 1.125rem + 0.63vw, 1.875rem);
+  line-height: clamp(1.25rem, 1.125rem + 0.63vw, 1.875rem);
+}
+
+.text_editor h4,
+.text_editor h5,
+.text_editor h6 {
+  font-size: clamp(1.125rem, 1.038rem + 0.44vw, 1.563rem);
+  line-height: clamp(1.125rem, 1.038rem + 0.44vw, 1.563rem);
+}
+
+.text_editor p,
+.text_editor li,
+.text_editor a,
+.text_editor blockquote p,
+.text_editor blockquote cite {
+  font-size: clamp(0.875rem, 0.85rem + 0.13vw, 1rem);
+  line-height: clamp(0.875rem, 0.85rem + 0.13vw, 1rem);
+}
+
+.text_editor a {
+  color: blue;
+  text-decoration: underline;
+}
+
+.text_editor img {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 12px;
+}
+
+.text_editor ul {
+  list-style: disc;
+}
+.text_editor ol {
+  list-style: decimal;
+}
+
+.text_editor ul,
+.text_editor ol {
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+}
+
+.text_editor .ce-block__content,
+.ce-toolbar__content {
+  max-width: 1200px !important;
+}
+
+.text_editor figcaption {
+  font-size: 14px;
+  margin-top: 4px;
+  font-style: italic;
+}
+
+.ce-toolbar__actions {
+  right: 0;
+  left: none;
+}
+
+.text_editor .ce-toolbar__settings-btn,
+.text_editor .ce-toolbar__plus {
+  background-color: white;
+}
+
+.text_editor blockquote {
+  margin-left: 30px;
+  padding-left: 10px;
+  border-left: 2px solid black;
+}
+
+.text_editor blockquote p {
+  margin-bottom: 8px;
+}
+
+.warning {
+  display: flex;
+  align-items: start;
+  background: white;
+  padding: 8px;
+  border-radius: 6px;
+  column-gap: 10px;
+  max-width: max-content;
+  min-width: 200px;
+}
+
+.warning_title {
+  font-size: clamp(15px, 16.5px - 0.46875vw, 18px);
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.warning_text {
+  font-size: clamp(14px, 15px - 0.3125vw, 16px);
+}
+
+.text_editor mark {
+  background: yellow;
+}
+
+/* Таблицы */
+
+.text_editor .table-wrapper {
+  overflow-x: auto;
+}
+
+.text_editor table {
+  display: inline-table;
+  width: auto; /* Убираем 100% ширину */
+  min-width: 100%; /* Но не меньше контейнера */
+  border-collapse: collapse;
+  border-spacing: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 14px;
+  line-height: 1.4;
+  background-color: #ffffff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  table-layout: auto; /* Автоматическое распределение ширины */
+}
+
+/* Запрещаем слишком узкие колонки */
+.text_editor th,
+.text_editor td {
+  min-width: 120px; /* Минимальная ширина колонок */
+  max-width: 400px; /* Максимальная ширина колонок */
+  white-space: nowrap; /* Запрещаем перенос текста */
+  overflow: hidden;
+  text-overflow: ellipsis; /* Многоточие при переполнении */
+}
+
+/* Для ячеек с длинным текстом можно разрешить перенос */
+.text_editor td.allow-wrap {
+  white-space: normal;
+  word-wrap: break-word;
+}
+
+/* Заголовок таблицы */
+.text_editor thead {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+/* Строки заголовка */
+.text_editor thead tr {
+  border-bottom: 2px solid #e2e8f0;
+}
+
+/* Ячейки заголовка */
+.text_editor th {
+  padding: 16px 12px;
+  text-align: left;
+  font-weight: 600;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.text_editor th:last-child {
+  border-right: none;
+}
+
+/* Тело таблицы */
+.text_editor tbody {
+  background-color: #ffffff;
+}
+
+/* Строки тела таблицы */
+.text_editor tbody tr {
+  border-bottom: 1px solid #f1f5f9;
+  transition: background-color 0.2s ease;
+}
+
+.text_editor tbody tr:hover {
+  background-color: #f8fafc;
+}
+
+.text_editor tbody tr:last-child {
+  border-bottom: none;
+}
+
+/* Ячейки тела таблицы */
+.text_editor td {
+  padding: 14px 12px;
+  color: #475569;
+  border-right: 1px solid #f1f5f9;
+}
+
+.text_editor td:last-child {
+  border-right: none;
+}
+
+/* Четные строки (зебра) */
+.text_editor tbody tr:nth-child(even) {
+  background-color: #fafbfc;
+}
+
+.text_editor tbody tr:nth-child(even):hover {
+  background-color: #f1f5f9;
+}
+
+/* Стили для скролла */
+.text_editor::-webkit-scrollbar {
+  height: 8px;
+}
+
+.text_editor::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.text_editor::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+.text_editor::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* Для мобильных устройств */
+@media (max-width: 768px) {
+  .text_editor table {
+    font-size: 13px;
+    box-shadow: none;
+    border-radius: 0;
+  }
+
+  .text_editor th,
+  .text_editor td {
+    padding: 12px 8px;
+    min-width: 100px; /* Уменьшаем минимальную ширину на мобильных */
+  }
+
+  .text_editor th {
+    font-size: 11px;
+  }
+  .text_editor blockquote {
+    margin-left: 10px;
+  }
+}
+
+/* Дополнительные классы для контроля ширины */
+.text_editor .col-small {
+  min-width: 80px;
+  max-width: 150px;
+}
+
+.text_editor .col-medium {
+  min-width: 150px;
+  max-width: 250px;
+}
+
+.text_editor .col-large {
+  min-width: 200px;
+  max-width: 400px;
+}
+
+/* Таблицы */

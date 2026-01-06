@@ -1,0 +1,19 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 120px;
+}
+
+.link {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.link svg,
+.link path {
+  fill: var(--color-foreground);
+}

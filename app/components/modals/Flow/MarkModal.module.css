@@ -1,0 +1,27 @@
+.inner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+}
+
+.button_submit {
+  min-width: 200px;
+  min-height: 64px;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--black);
+  color: var(--white);
+  border-radius: 12px;
+}
+
+.stars {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}

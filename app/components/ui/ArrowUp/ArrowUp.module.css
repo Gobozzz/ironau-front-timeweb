@@ -1,0 +1,44 @@
+.arrow {
+  position: fixed;
+  bottom: 80px;
+  right: max(60px, calc((100vw - var(--max-width-screen)) / 2 + 60px));
+  z-index: 10;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-blue);
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateY(20px);
+  visibility: hidden;
+  user-select: none;
+}
+
+/* Состояние видимости */
+.arrowVisible {
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+  animation: fadeInUp 0.3s ease forwards;
+}
+
+.arrow:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

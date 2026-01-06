@@ -1,0 +1,13 @@
+.submit_btn {
+  position: fixed;
+  z-index: 3;
+  border-radius: 12px;
+  top: 139px;
+  right: max(60px, calc((100vw - var(--max-width-screen)) / 2 + 60px));
+  min-height: 64px;
+  background: var(--blue);
+  color: var(--white);
+  font-size: 14px;
+  font-family: var(--font-text-medium);
+  padding: 0 29px;
+}

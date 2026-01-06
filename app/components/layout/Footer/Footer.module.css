@@ -1,0 +1,24 @@
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 160px 10px;
+}
+
+.title {
+  font-family: var(--font-header);
+  font-size: 100px;
+  line-height: 0.7;
+  margin-bottom: 40px;
+  user-select: none;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 44px;
+}
+
+.footer_flow * {
+  color: var(--black);
+}

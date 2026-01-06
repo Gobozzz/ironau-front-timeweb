@@ -1,0 +1,43 @@
+.items {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-bottom: 64px;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.item_title {
+  font-size: 12px;
+  font-family: var(--font-text-medium);
+  line-height: 1;
+}
+
+.item_input {
+  height: 44px;
+  width: 100%;
+  max-width: 354px;
+  font-size: 14px;
+  font-family: var(--font-text-medium);
+  background: var(--light-gray);
+  border-radius: 8px;
+  padding: 0 12px;
+  color: var(--black) !important;
+}
+
+.button {
+  height: 44px;
+  border-radius: 14px;
+  max-width: 354px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-foreground);
+  color: var(--color-background);
+  font-size: 14px;
+  font-family: var(--font-text-medium);
+}

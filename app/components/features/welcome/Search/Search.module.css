@@ -1,0 +1,25 @@
+.title {
+  font-size: 16px;
+  font-family: var(--font-navigation);
+  margin-bottom: 12px;
+  user-select: none;
+}
+
+.block {
+  width: 100%;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  user-select: none;
+  background: var(--color-gray-light);
+  padding: 0 12px;
+  border-radius: 8px;
+}
+
+.value {
+  font-size: 12px;
+  font-weight: var(--font-text-medium);
+  color: var(--color-black);
+}

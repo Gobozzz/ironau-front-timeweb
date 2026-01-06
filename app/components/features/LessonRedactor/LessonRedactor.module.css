@@ -1,0 +1,17 @@
+.inner {
+  margin-bottom: 56px;
+}
+
+.items {
+  display: grid;
+  column-gap: 40px;
+  row-gap: 44px;
+  grid-template-columns: repeat(auto-fill, minmax(404px, 1fr));
+}
+
+.title_section {
+  font-size: 14px;
+  font-family: var(--font-text-medium);
+  margin-bottom: 16px;
+  user-select: none;
+}

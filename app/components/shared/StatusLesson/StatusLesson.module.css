@@ -1,0 +1,8 @@
+.item {
+  text-align: center;
+  padding: 3px;
+  border-radius: 4px;
+  font-size: 9px;
+  user-select: none;
+  color: var(--white) !important;
+}

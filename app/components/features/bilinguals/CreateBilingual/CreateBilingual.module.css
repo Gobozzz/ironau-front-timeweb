@@ -1,0 +1,121 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+}
+
+.form_item {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form_item_title {
+  font-size: 16px;
+  font-family: var(--font-text-medium);
+}
+
+.form_item_input_big {
+  font-size: 20px;
+  font-family: var(--font-text-medium);
+  width: 100%;
+  max-width: 440px;
+  height: 60px;
+  border: 2px solid var(--blue);
+  border-radius: 16px;
+  padding: 0 16px;
+}
+
+.form_item_input {
+  height: 49px;
+  width: 100%;
+  max-width: 960px;
+  background: var(--light-gray);
+  font-size: 14px;
+  color: var(--black);
+  border-radius: 12px;
+  font-family: var(--font-text-medium);
+  padding: 0 16px;
+}
+
+.form_item_values {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  max-width: 960px;
+  max-height: 350px;
+  overflow-y: auto;
+}
+
+.language {
+  font-size: 12px;
+  font-family: var(--font-text-medium);
+  background: var(--light-gray);
+  color: var(--black);
+  border-radius: 6px;
+  min-width: 69px;
+  min-height: 29px;
+  word-break: break-word;
+  padding: 5px;
+  border: 2px solid transparent;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--light-gray);
+  border-radius: 8px;
+  padding: 0 12px;
+  height: 44px;
+  max-width: 260px;
+}
+
+.search_input {
+  flex: auto;
+  height: 100%;
+  font-size: 12px;
+  font-family: var(--font-text-medium);
+  color: var(--black);
+}
+
+.tag {
+  font-size: 12px;
+  font-family: var(--font-text-medium);
+  background: var(--light-gray);
+  color: var(--black);
+  border-radius: 6px;
+  min-width: 69px;
+  min-height: 32px;
+  word-break: break-word;
+  padding: 5px 16px;
+  border: 2px solid transparent;
+}
+
+.form_item_image_text {
+  font-size: 12px;
+  color: var(--gray);
+  font-family: var(--font-text-medium);
+}
+
+.language.active,
+.tag.active {
+  border: 2px solid var(--blue);
+}
+
+.button_submit {
+  position: fixed;
+  top: 136px;
+  right: max(60px, calc((100vw - var(--max-width-screen)) / 2 + 60px));
+  z-index: 3;
+  background: var(--blue);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  font-family: var(--font-text-medium);
+  font-size: 14px;
+  min-width: 240px;
+  min-height: 64px;
+}

@@ -1,0 +1,140 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Bebas Neue Cyrillic";
+  src: url("/fonts/bebas/bebas_neue_cyrillic.woff2") format("woff2"),
+    url("/fonts/bebas/bebas_neue_cyrillic.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Object Sans";
+  src: url("/fonts/object/ObjectSans-Regular.woff2") format("woff2"),
+    url("/fonts/object/ObjectSans-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/inter/Inter-Regular.woff2") format("woff2"),
+    url("/fonts/inter/Inter-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Inter Medium";
+  src: url("/fonts/interMedium/Inter-Medium.woff") format("woff2"),
+    url("/fonts/interMedium/Inter-Medium.woff2") format("woff");
+}
+
+:root {
+  --max-width-screen: 1920px;
+
+  --font-header: "Bebas Neue Cyrillic";
+  --font-navigation: "Object Sans";
+  --font-text: "Inter";
+  --font-text-medium: "Inter Medium";
+  --black: #131313;
+  --white: #fafafa;
+  --gray: #6c757d;
+  --light-gray: #f2f2f2;
+  --green: #00ff09;
+  --blue: #4e79eb;
+  --orange: #ff6200;
+  --red: #ff0000;
+  --yellow-marker: #fff600;
+  --gray-opcity: rgba(108, 112, 125, 0.5);
+
+  --background: var(--white);
+  --foreground: var(--black);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-header: var(--font-header);
+  --font-navigation: var(--font-navigation);
+  --font-text: var(--font-text);
+  --font-text-medium: var(--font-text-medium);
+  --color-black: var(--black);
+  --color-white: var(--white);
+  --color-gray: var(--gray);
+  --color-gray-opcity: var(--gray-opcity);
+  --color-gray-light: var(--light-gray);
+  --color-green: var(--green);
+  --color-blue: var(--blue);
+  --color-orange: var(--orange);
+  --color-marker: var(--yellow-marker);
+  --color-sceleton: var(--light-gray);
+}
+
+[data-theme="dark"] {
+  --background: var(--black);
+  --foreground: var(--white);
+  --color-gray: var(--white);
+  --color-gray-light: var(--white);
+  --yellow-marker: var(--orange);
+}
+
+* {
+  font-family: var(--font-text);
+  color: var(--foreground);
+}
+
+body {
+  background: var(--background);
+  min-height: 100vh;
+}
+
+button {
+  cursor: pointer;
+  display: block;
+  user-select: none;
+}
+
+a,
+img {
+  user-select: none;
+}
+
+input,
+textarea {
+  outline: none;
+  display: block;
+}
+
+.hide-scrollbar {
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+  width: 0;
+}
+
+mark {
+  font-size: inherit;
+  font-family: inherit;
+  font-weight: inherit;
+  color: inherit;
+  background: var(--yellow-marker) !important;
+}
+
+/* Editor */
+
+.ct__content * {
+  color: var(--white) !important;
+}
+
+.ce-block *,
+.ce-toolbar__plus svg,
+.ce-toolbar__settings-btn svg,
+.codex-editor path,
+.ce-popover-item__title {
+  color: var(--black) !important;
+}
+
+.codex-editor__redactor {
+  padding-bottom: 150px !important;
+}
+
+/* Editor */

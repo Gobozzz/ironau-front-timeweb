@@ -1,0 +1,11 @@
+.items {
+  display: flex;
+  align-items: start;
+  gap: 32px;
+  overflow: hidden;
+  max-width: min(calc(100vw - 280px), 1500px);
+}
+
+.slide {
+  width: 404px !important;
+}

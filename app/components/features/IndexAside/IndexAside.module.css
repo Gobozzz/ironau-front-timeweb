@@ -1,0 +1,7 @@
+.aside {
+  min-width: 190px;
+  max-width: 190px;
+  height: 100vh;
+  overflow-y: auto;
+  padding-bottom: 60px;
+}

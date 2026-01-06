@@ -1,0 +1,20 @@
+.items {
+  display: flex;
+  flex-direction: column;
+  row-gap: 24px;
+  margin-bottom: 52px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-left: 9px;
+  width: 100%;
+  min-height: 44px;
+  background: var(--color-white);
+  color: var(--color-black);
+  border-radius: 12px;
+  user-select: none;
+  font-family: var(--font-navigation);
+}

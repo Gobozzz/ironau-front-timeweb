@@ -1,0 +1,200 @@
+.wrapper {
+  width: 100%;
+  max-width: 1008px;
+  padding: 24px;
+  border-radius: 20px;
+  background: var(--light-gray);
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+
+.type {
+  font-size: 16px;
+  font-family: var(--font-text-medium);
+  user-select: none;
+  color: var(--black);
+}
+
+.tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: start;
+}
+
+.order {
+  width: 32px;
+  height: 32px;
+  border-radius: 12px;
+  background: var(--blue);
+  color: var(--white);
+  font-size: 12px;
+  font-family: var(--font-text-medium);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+}
+
+.tool {
+  min-width: 32px;
+  min-height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background: var(--white);
+  user-select: none;
+}
+
+.form_input {
+  height: 49px;
+  width: 100%;
+  background: var(--white);
+  border-radius: 12px;
+  padding: 0 16px;
+  font-size: 14px;
+  color: var(--black);
+  font-family: var(--font-text-medium);
+}
+
+.form_input_title {
+  font-size: 14px;
+  font-family: var(--font-text-medium);
+  user-select: none;
+  color: var(--black);
+}
+
+.form_item {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.correct_words_inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.correct_word {
+  min-height: 40px;
+  word-break: break-word;
+  background: var(--white);
+  font-size: 14px;
+  font-family: var(--font-text-medium);
+  color: var(--black);
+  padding: 8px 10px;
+  border-radius: 8px;
+  user-select: none;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.correct_word_delete {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--light-gray);
+  border-radius: 4px;
+  width: 24px;
+  height: 24px;
+}
+
+.choises {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.choise {
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+}
+
+.choises_tabs {
+  display: flex;
+  gap: 0;
+  background: var(--white);
+  border-radius: 10px;
+  overflow: hidden;
+  min-width: 160px;
+}
+
+.choise_tab {
+  height: 49px;
+  min-height: 49px;
+  padding: 0 8px;
+  min-width: 70px;
+  font-size: 14px;
+  font-weight: var(--font-text-medium);
+  color: var(--black);
+  border-radius: 10px;
+}
+
+.choise_tab.active {
+  background: var(--blue);
+  color: var(--white);
+}
+
+.add_choise_button {
+  font-size: 12px;
+  font-family: var(--font-text-medium);
+  color: var(--blue);
+  text-align: left;
+}
+
+.pass_words_paths {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.pass_words_path {
+  display: flex;
+  font-size: 14px;
+  align-items: center;
+  gap: 16px;
+  min-height: 44px;
+  background: var(--blue);
+  padding: 4px 10px;
+  border-radius: 8px;
+  color: var(--white);
+}
+
+.pass_words_path_empty {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-height: 44px;
+  background: var(--orange);
+  padding: 4px 10px;
+  border-radius: 8px;
+}
+
+.pass_words_path_empty_title {
+  font-size: 14px;
+  font-family: var(--font-text-medium);
+  color: var(--white);
+  word-break: break-word;
+}
+
+.pass_words_path_empty_tools {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pass_words_path_empty_tools .tool {
+  background: var(--light-gray) !important;
+}
+
+.pass_words_tools {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}

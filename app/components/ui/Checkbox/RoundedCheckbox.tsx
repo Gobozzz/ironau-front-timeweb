@@ -1,0 +1,126 @@
+import { Checkbox } from "@mui/material";
+
+export const RoundedCheckbox = ({ ...props }) => {
+  return (
+    <Checkbox
+      {...props}
+      icon={
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect
+            x="1"
+            y="1"
+            width="22"
+            height="22"
+            rx="7"
+            stroke="#131313"
+            strokeWidth="2"
+          />
+          <rect
+            x="1"
+            y="1"
+            width="22"
+            height="22"
+            rx="7"
+            stroke="black"
+            strokeOpacity="0.2"
+            strokeWidth="2"
+          />
+          <rect
+            x="1"
+            y="1"
+            width="22"
+            height="22"
+            rx="7"
+            stroke="black"
+            strokeOpacity="0.2"
+            strokeWidth="2"
+          />
+          <rect
+            x="1"
+            y="1"
+            width="22"
+            height="22"
+            rx="7"
+            stroke="black"
+            strokeOpacity="0.2"
+            strokeWidth="2"
+          />
+        </svg>
+      }
+      checkedIcon={
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect
+            x="1"
+            y="1"
+            width="22"
+            height="22"
+            rx="7"
+            stroke="#131313"
+            strokeWidth="2"
+          />
+          <rect
+            x="1"
+            y="1"
+            width="22"
+            height="22"
+            rx="7"
+            stroke="black"
+            strokeOpacity="0.2"
+            strokeWidth="2"
+          />
+          <rect
+            x="1"
+            y="1"
+            width="22"
+            height="22"
+            rx="7"
+            stroke="black"
+            strokeOpacity="0.2"
+            strokeWidth="2"
+          />
+          <rect
+            x="1"
+            y="1"
+            width="22"
+            height="22"
+            rx="7"
+            stroke="black"
+            strokeOpacity="0.2"
+            strokeWidth="2"
+          />
+          <path
+            d="M10 16.6998L6 12.6998L7.4 11.2998L10 13.8998L16.6 7.2998L18 8.69981L10 16.6998Z"
+            fill="#131313"
+          />
+          <path
+            d="M10 16.6998L6 12.6998L7.4 11.2998L10 13.8998L16.6 7.2998L18 8.69981L10 16.6998Z"
+            fill="black"
+            fillOpacity="0.2"
+          />
+          <path
+            d="M10 16.6998L6 12.6998L7.4 11.2998L10 13.8998L16.6 7.2998L18 8.69981L10 16.6998Z"
+            fill="black"
+            fillOpacity="0.2"
+          />
+          <path
+            d="M10 16.6998L6 12.6998L7.4 11.2998L10 13.8998L16.6 7.2998L18 8.69981L10 16.6998Z"
+            fill="black"
+            fillOpacity="0.2"
+          />
+        </svg>
+      }
+    />
+  );
+};

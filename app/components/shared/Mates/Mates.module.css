@@ -1,0 +1,29 @@
+.inner {
+  background: var(--white);
+  width: 100%;
+  padding: 0 10px;
+  border-radius: 32px;
+  box-shadow: 0 13px 15px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+
+.image {
+  width: 440px;
+}
+
+.title {
+  font-size: 64px;
+  font-family: var(--font-header);
+  line-height: 1.1;
+  color: var(--black);
+}
+
+.title span {
+  font-size: inherit;
+  font-family: inherit;
+  color: inherit;
+  text-decoration: underline;
+}

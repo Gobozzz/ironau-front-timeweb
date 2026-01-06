@@ -1,0 +1,21 @@
+.inner {
+  display: flex;
+  align-items: stretch;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.rule {
+  font-size: 14px;
+  color: var(--white);
+  background: var(--blue);
+  min-height: 64px;
+  padding: 5px 20px;
+  width: 100%;
+  max-width: 240px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  word-break: break-word;
+}

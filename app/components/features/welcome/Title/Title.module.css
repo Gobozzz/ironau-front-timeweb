@@ -1,0 +1,8 @@
+.title {
+  display: inline-block;
+  font-size: 320px;
+  line-height: 0.7;
+  font-family: var(--font-header);
+  user-select: none;
+  margin-bottom: 40px;
+}

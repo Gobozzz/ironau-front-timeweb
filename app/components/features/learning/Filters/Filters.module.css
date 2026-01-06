@@ -1,0 +1,64 @@
+.inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.search_filter {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--light-gray);
+  border-radius: 8px;
+  padding: 0 12px;
+  height: 44px;
+  width: 100%;
+  max-width: 354px;
+}
+
+.search {
+  flex: auto;
+  height: 100%;
+  font-size: 12px;
+  color: var(--black);
+}
+
+.levels {
+  display: flex;
+  align-items: end;
+  gap: 4px;
+}
+
+.level {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 5px 10px;
+  min-height: 44px;
+  background: var(--light-gray);
+  border-radius: 8px;
+  font-size: 12px;
+  font-family: var(--font-navigation);
+  color: var(--black);
+}
+
+.galochka_inner {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--white);
+  margin-left: 6px;
+}
+
+.galochka {
+  display: none;
+}
+
+.galochka.active {
+  display: block;
+}

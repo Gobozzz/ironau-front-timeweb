@@ -1,0 +1,170 @@
+.button_add_part {
+  position: fixed;
+  right: max(60px, calc((100vw - var(--max-width-screen)) / 2 + 60px));
+  bottom: 150px;
+  width: 64px;
+  height: 64px;
+  z-index: 9;
+  border-radius: 12px;
+  background: var(--blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button_send {
+  position: fixed;
+  right: max(60px, calc((100vw - var(--max-width-screen)) / 2 + 60px));
+  top: 90px;
+  width: 240px;
+  height: 64px;
+  z-index: 10;
+  border-radius: 12px;
+  background: var(--blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+}
+
+.menu {
+  width: 100%;
+  max-width: 660px;
+  background: var(--light-gray);
+  border-radius: 12px;
+  margin: 0 auto 52px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.menu_up {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.menu_language_choise {
+  display: block;
+  background: var(--white);
+  border-radius: 12px;
+}
+
+.menu_language_active,
+.menu_languages_variants button {
+  width: 280px;
+  height: 44px;
+  text-align: center;
+  color: var(--black);
+  font-size: 16px;
+  font-family: var(--font-text-medium);
+}
+
+.menu_languages_variants {
+  display: none;
+}
+
+.menu_languages_variants.active {
+  display: block;
+}
+
+.button_add_language {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--white);
+  color: var(--black);
+  border-radius: 12px;
+  width: 155px;
+  height: 44px;
+  font-family: var(--font-text-medium);
+  font-size: 12px;
+  gap: 8px;
+}
+
+.button_delete_language {
+  color: var(--black);
+  width: 155px;
+  height: 44px;
+  font-family: var(--font-text-medium);
+  font-size: 12px;
+  gap: 8px;
+}
+
+.translations {
+  display: flex;
+  gap: 32px;
+}
+
+.translations_line {
+  min-width: 2px;
+  min-height: calc(100% - 8px);
+  max-height: calc(100% - 8px);
+  background: var(--gray);
+}
+
+.translation {
+  flex: 1;
+}
+
+.translation_name {
+  width: 100%;
+  max-width: 440px;
+  height: 60px;
+  border: 2px solid var(--blue);
+  font-size: 20px;
+  padding: 0 16px;
+  border-radius: 16px;
+  font-family: var(--font-text-medium);
+  margin-bottom: 24px;
+}
+
+.translation_parts {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.translation_part {
+  padding-bottom: 16px;
+  border-bottom: 2px solid var(--gray);
+}
+
+.translation_part_number {
+  height: 21px;
+  padding: 0 12px;
+  font-size: 12px;
+  font-family: var(--font-text-medium);
+  border-radius: 6px;
+  background: var(--light-gray);
+  color: var(--black);
+  max-width: max-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
+.translation_part_redactor {
+  height: 200px;
+  overflow-y: auto;
+  background: var(--light-gray);
+  border-radius: 16px;
+  margin-bottom: 16px;
+}
+
+.translation_part_tools {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.translation_part_tool {
+  min-width: 32px;
+  min-height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

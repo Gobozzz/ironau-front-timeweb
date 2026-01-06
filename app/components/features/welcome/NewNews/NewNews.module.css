@@ -1,0 +1,14 @@
+
+.news {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 26px;
+  row-gap: 40px;
+  margin-bottom: 40px;
+}
+
+.more {
+  font-size: 14px;
+  font-family: var(--font-text-medium);
+  text-decoration: underline;
+}

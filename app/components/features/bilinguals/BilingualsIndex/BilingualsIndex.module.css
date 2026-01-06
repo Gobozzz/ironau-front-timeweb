@@ -1,0 +1,11 @@
+.items {
+  display: grid;
+  column-gap: 40px;
+  row-gap: 44px;
+  grid-template-columns: repeat(auto-fill, 300px);
+  max-width: 1300px;
+}
+
+.paginate_inner {
+  max-width: 1300px;
+}

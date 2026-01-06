@@ -1,0 +1,231 @@
+.flow_inner {
+  display: flex;
+  align-items: start;
+}
+
+.flow_work_place_inner {
+  flex: auto;
+  height: 100%;
+  background: var(--white);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.flow_work_place {
+  min-height: 100vh;
+  flex: auto;
+  padding: 24px 70px;
+}
+
+.sidebar {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  min-width: 366px;
+  max-width: 366px;
+  background: var(--black);
+  padding: 24px 12px 24px 60px;
+}
+
+.sidebar_title {
+  font-size: 14px;
+  font-family: var(--font-text-medium);
+  color: var(--white);
+  margin-bottom: 32px;
+}
+
+.sidebar_items {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.sidebar_item {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sidebar_item_exercises {
+  display: flex;
+  flex-direction: column;
+  padding-left: 18px;
+}
+
+.sidebar_item_exercise {
+  display: flex;
+  align-items: center;
+  height: 42px;
+  background: var(--black);
+  padding: 0 18px;
+  gap: 4px;
+  border-left: 2px solid var(--gray-opcity);
+}
+
+.sidebar_item_lesson_title,
+.sidebar_item_exercise > div {
+  font-size: 12px;
+  color: var(--white);
+  text-align: left;
+}
+
+.sidebar_item_exercise.active {
+  background: var(--white);
+  border-left: none !important;
+  border-radius: 12px;
+}
+
+.sidebar_item_exercise.active > div {
+  color: var(--black);
+}
+
+.sidebar_item_exercise.completed {
+  border-left: 2px solid var(--green);
+}
+
+.roadmap_exercises {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: calc(min(1920px, 100vw) - 550px);
+  overflow-x: auto;
+  gap: 12px;
+}
+
+.roadmap_exercise {
+  min-width: 52px;
+  min-height: 52px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--light-gray);
+  margin-bottom: 32px;
+}
+
+.roadmap_exercise.active {
+  border: 2px solid var(--black);
+}
+
+.roadmap_exercise.completed {
+  background: var(--black);
+}
+
+.navigate_exercises_items {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.navigate_exercises_item {
+  height: 64px;
+  font-size: 12px;
+  color: var(--black);
+  background: var(--light-gray);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+  min-width: 200px;
+  font-family: var(--font-text-medium);
+}
+
+.exercise_flow_description {
+  margin-bottom: 16px;
+  font-size: 16px;
+  color: var(--black);
+}
+
+.text_exercise_input {
+  margin-bottom: 32px;
+  height: 44px;
+  width: 100%;
+  max-width: 800px;
+  background: var(--light-gray);
+  padding: 0 12px;
+  font-size: 12px;
+  font-family: var(--font-text-medium);
+  border-radius: 8px;
+  color: var(--black);
+}
+
+.submit_button_exercise {
+  min-height: 64px;
+  min-width: 200px;
+  padding: 10px;
+  background: var(--black);
+  color: var(--white);
+  font-size: 12px;
+  font-family: var(--font-text-medium);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+
+.success_answer {
+  color: var(--black);
+  user-select: none;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.exercise_answer_variant_items {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.exercise_answer_variant_item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.exercise_answer_variant_item_title {
+  font-size: 16px;
+  color: var(--black);
+}
+
+.exercise_path_words_paths {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  column-gap: 4px;
+  row-gap: 8px;
+  max-width: 920px;
+  margin-bottom: 32px;
+}
+.exercise_path_words_path_text {
+  font-size: 16px;
+  color: var(--black);
+}
+
+.hidden_block_pass_words_select {
+  min-width: 90px;
+  height: 36px;
+  background: var(--light-gray);
+  color: var(--black);
+}
+.hidden_block_pass_words_option {
+  color: var(--black);
+}
+
+.sidebar_mark_button {
+  min-width: 200px;
+  font-size: 12px;
+  min-height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--blue);
+  color: var(--white);
+  margin-bottom: 32px;
+  border-radius: 12px;
+}

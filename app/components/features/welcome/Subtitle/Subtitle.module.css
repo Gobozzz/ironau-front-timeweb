@@ -1,0 +1,9 @@
+.subtitle {
+    user-select: none;
+    font-size: 16px;
+    line-height: 22px;
+}
+
+.subtitle a {
+    text-decoration: underline;
+}

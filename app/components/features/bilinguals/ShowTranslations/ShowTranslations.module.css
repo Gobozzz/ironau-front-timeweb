@@ -1,0 +1,128 @@
+.main_inner {
+  display: flex;
+  align-items: stretch;
+  gap: 32px;
+}
+
+.inner_part {
+  flex: 1;
+}
+
+.line_inner {
+  min-height: 100%;
+  width: 2px;
+  background: var(--light-gray);
+}
+
+.choise {
+  width: 100%;
+  max-width: 600px;
+}
+
+.choise_title {
+  font-size: 12px;
+  color: var(--gray);
+  line-height: 1;
+  margin-bottom: 4px;
+  font-family: var(--font-navigation);
+  user-select: none;
+}
+
+.choise_items {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  overflow-x: auto;
+  padding-bottom: 16px;
+}
+
+.choise_item {
+  font-size: 40px;
+  line-height: 1;
+  user-select: none;
+  color: var(--gray);
+  font-family: var(--font-header);
+  white-space: nowrap;
+}
+
+.choise_item:hover {
+  color: var(--color-foreground);
+}
+
+.choise_item.active {
+  color: var(--color-foreground);
+}
+
+.author_block {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 40px;
+}
+
+.author_block_title {
+  font-size: 12px;
+  font-style: italic;
+  font-family: var(--font-navigation);
+  color: var(--gray);
+  user-select: none;
+}
+
+.author_block_value {
+  font-size: 14px;
+  line-height: 1;
+  font-family: var(--font-navigation);
+}
+
+.translation_title {
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.translation_parts {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.translation_part {
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--light-gray);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.translation_part_number {
+  user-select: none;
+  height: 21px;
+  padding: 0 12px;
+  font-size: 12px;
+  font-family: var(--font-text-medium);
+  border-radius: 6px;
+  background: var(--light-gray);
+  color: var(--black);
+  max-width: max-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+.part_text {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.part_text a {
+  color: var(--blue);
+  text-decoration: underline;
+}
+
+.translation_part_desctop {
+  flex: 1;
+  padding-top: 24px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--light-gray);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}

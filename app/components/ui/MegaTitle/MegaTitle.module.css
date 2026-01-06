@@ -1,0 +1,7 @@
+.title {
+  font-size: 96px;
+  font-family: var(--font-header);
+  margin-bottom: 60px;
+  user-select: none;
+  line-height: 1;
+}

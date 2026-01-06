@@ -1,0 +1,64 @@
+.form {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  row-gap: 32px;
+  padding: 24px;
+}
+
+.input_item {
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+}
+
+.input_item_title {
+  font-size: 16px;
+  line-height: 1;
+  user-select: none;
+  color: var(--black) !important;
+  font-family: var(--font-text-medium);
+}
+
+.input_item_input {
+  width: 100%;
+  height: 49px;
+  font-size: 14px;
+  border-radius: 12px;
+  background: var(--white);
+  padding: 0 16px;
+  color: var(--black) !important;
+  font-family: var(--font-text-medium);
+}
+
+.logo {
+  width: 92px;
+  height: 92px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.input_item_textarea {
+  width: 100%;
+  resize: none;
+  padding: 16px;
+  border-radius: 12px;
+  font-size: 14px;
+  background: var(--white);
+  font-family: var(--font-text-medium);
+  height: 320px;
+  color: var(--black) !important;
+}
+
+.btn_submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 29px;
+  min-height: 64px;
+  background: var(--blue) !important;
+  border-radius: 12px;
+  color: var(--white);
+  max-width: max-content;
+}

@@ -1,0 +1,28 @@
+.container {
+  padding: 20px;
+  line-height: 1.6;
+}
+
+.title {
+  font-size: 24px;
+  font-family: var(--font-header);
+  margin-bottom: 16px;
+}
+
+.section {
+  margin-bottom: 20px;
+}
+
+.highlight {
+  font-weight: bold;
+}
+
+.link {
+  text-decoration: underline;
+  color: var(--blue) !important;
+}
+
+.list {
+  list-style: disc;
+  padding-left: 20px;
+}

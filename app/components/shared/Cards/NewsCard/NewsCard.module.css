@@ -1,0 +1,72 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  row-gap: 12px;
+}
+
+.date,
+.author {
+  color: var(--color-gray);
+  font-size: 12px;
+  margin-bottom: 4px;
+  font-family: var(--font-navigation);
+}
+
+.author {
+  margin-bottom: 0;
+}
+
+.tags {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tag {
+  font-family: var(--font-text-medium);
+  font-size: 12px;
+  padding: 8px 16px;
+  border-radius: 6px;
+  background: var(--color-gray-light);
+  color: var(--color-black);
+}
+
+.title {
+  font-size: 20px;
+  line-height: 1;
+  font-family: var(--font-navigation);
+}
+
+.text {
+  font-size: 12px;
+  font-family: var(--font-navigation);
+  line-height: 18px;
+}
+
+.link {
+  font-family: var(--font-text-medium);
+  font-size: 12px;
+}
+
+.link_edit {
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: var(--blue);
+  color: var(--white);
+  font-size: 12px;
+  font-family: var(--font-text-medium);
+}
+
+.button_delete {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background: var(--light-gray);
+}
