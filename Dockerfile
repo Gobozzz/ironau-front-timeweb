@@ -1,10 +1,10 @@
-# Используем официальный Node.js образ как базовый, рекомендуется LTS версия
-FROM node:18-alpine AS builder
+# Используем Node.js версии 20 для совместимости с Next.js 16+
+FROM node:20-alpine AS builder
 
-# Создаем рабочую директорию внутри контейнера
+# Создаем рабочую папку
 WORKDIR /app
 
-# Копируем package.json и package-lock.json/yarn.lock для установки зависимостей
+# Копируем файлы зависимостей
 COPY package.json package-lock.json* yarn.lock* ./
 
 # Устанавливаем зависимости
@@ -13,16 +13,16 @@ RUN npm install --frozen-lockfile
 # Копируем весь проект
 COPY . .
 
-# Собираем проект (приложение Next.js)
+# Строим проект Next.js
 RUN npm run build
 
-# Создаем финальный этап для production
-FROM node:18-alpine AS runner
+# Создаем финальный образ для запуска
+FROM node:20-alpine AS runner
 
-# Создаем рабочую директорию в рабочем контейнере
+# Создаем рабочую папку
 WORKDIR /app
 
-# Копируем только необходимые файлы из сборочного этапа
+# Копируем только необходимые файлы и папки из сборочного этапа
 COPY --from=builder /app/package.json /app/package-lock.json* /app/yarn.lock* ./
 COPY --from=builder /app/.next ./.next
 COPY --from=builder /app/public ./public
@@ -34,8 +34,8 @@ RUN npm install --prod --frozen-lockfile
 # Устанавливаем переменную окружения
 ENV NODE_ENV=production
 
-# Открываем порт Next.js по умолчанию (3000)
+# Открываем порт
 EXPOSE 3000
 
-# Запускаем сервер
+# Запускаем приложение
 CMD ["npm", "start"]
