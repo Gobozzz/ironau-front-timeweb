@@ -30,7 +30,7 @@ export default function Home() {
           <NewNews />
         </div>
       </div>
-      <Mates />
+      {/* <Mates /> */}
     </IndexLayout>
   );
 }
