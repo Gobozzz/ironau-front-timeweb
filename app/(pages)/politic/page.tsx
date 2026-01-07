@@ -3,6 +3,7 @@ import { PageTitle } from "@/app/components/ui/PageTitle/PageTitle";
 import { Metadata } from "next";
 
 import styles from "@/app/styles/politic.module.css";
+import { SUPPORT_EMAIL } from "@/app/constants";
 
 export const metadata: Metadata = {
   title: "Политика конфиденциальности",
@@ -62,7 +63,7 @@ export default function Page() {
         <p>
           В случае вопросов о политике конфиденциальности, пишите на почту:{" "}
           <a href="mailto:contact@ironau.ru">
-            {process.env.NEXT_PUBLIC_SUPPORT_EMAIL}
+            {SUPPORT_EMAIL}
           </a>
           .
         </p>

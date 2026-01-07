@@ -41,6 +41,8 @@ export function RedactorTranslations({ id }: Props) {
     return null;
   }
 
+  const [loadingAddLanguage, setLoadingAddLanguage] = useState(false);
+
   const [bilingual, setBilingual] = useState<BilingualShowInterface | null>(
     null
   );
@@ -119,6 +121,24 @@ export function RedactorTranslations({ id }: Props) {
         };
       });
     }
+    setLoadingAddLanguage(true);
+    setTimeout(() => {
+      setActiveTranslations((prev) => {
+        return {
+          left: prev.right,
+          right: prev.left,
+        };
+      });
+    }, 500);
+    setTimeout(() => {
+      setActiveTranslations((prev) => {
+        return {
+          left: prev.right,
+          right: prev.left,
+        };
+      });
+      setLoadingAddLanguage(false);
+    }, 800);
   }
 
   function deletePart(i: number) {
@@ -241,23 +261,28 @@ export function RedactorTranslations({ id }: Props) {
         title="Билингва отправлена на модерацию"
       />
       <MegaTitle>{bilingual.title}</MegaTitle>
-      <MenuLanguages
-        languages={languages}
-        changeActiveTranslations={changeActiveTranslations}
-        activeTranslations={activeTranslations}
-        translations={translations}
-        addTranslation={addTranslation}
-        deleteTranslation={deleteTranslation}
-      />
+      {!loadingAddLanguage && (
+        <MenuLanguages
+          languages={languages}
+          changeActiveTranslations={changeActiveTranslations}
+          activeTranslations={activeTranslations}
+          translations={translations}
+          addTranslation={addTranslation}
+          deleteTranslation={deleteTranslation}
+        />
+      )}
       <ErrorsInput errors={errors.message} />
       <ErrorsInput errors={errors.translations} />
-      <Translations
-        errors={errors}
-        deletePart={deletePart}
-        changeTranslations={changeTranslations}
-        translations={translations}
-        activeTranslations={activeTranslations}
-      />
+      {!loadingAddLanguage && (
+        <Translations
+          errors={errors}
+          deletePart={deletePart}
+          changeTranslations={changeTranslations}
+          translations={translations}
+          activeTranslations={activeTranslations}
+        />
+      )}
+      {loadingAddLanguage && <Loader size="lg" />}
       <button
         onClick={() => {
           addPart();

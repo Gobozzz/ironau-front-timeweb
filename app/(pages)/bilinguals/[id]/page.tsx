@@ -7,7 +7,7 @@ import { getRealId } from "@helpers/links";
 import ShortLayout from "@/app/components/layout/ShortLayout";
 import { ShowTranslationsDesctop } from "@/app/components/features/bilinguals/ShowTranslations/ShowTranslationsDesctop";
 import { ArrowBack } from "@/app/components/ui/ArrowBack/ArrowBack";
-import { SITE_NAME } from "@/app/constants";
+import { SITE_NAME, SITE_URL } from "@/app/constants";
 
 export async function generateMetadata({
   params,
@@ -29,7 +29,7 @@ export async function generateMetadata({
   const imageOG = {
     url:
       bilingual.image ||
-      `${process.env.NEXT_PUBLIC_SITE_URL}/images/og-image.jpg`,
+      `${SITE_URL}/images/og-image.jpg`,
     width: 1200,
     height: 630,
     alt: `${bilingual.title} - Осетинский язык онлайн`,

@@ -6,7 +6,6 @@ import EditorEditBilingual from "@/app/components/shared/Editor/EditorEditBiling
 import Image from "next/image";
 import TrashIcon from "@/public/icons/trash-blue.svg";
 import { OutputData } from "@editorjs/editorjs";
-import { ErrorsInput } from "@/app/components/ui/ErrorsInput/ErrorsInput";
 
 interface Props {
   errors: ServerErrors;
@@ -21,6 +20,7 @@ export function Translation({
   deletePart,
   errors,
 }: Props) {
+
   function updateTitle(title: string) {
     translation.title = title;
     changeTranslation(translation);

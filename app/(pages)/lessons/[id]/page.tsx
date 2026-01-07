@@ -13,7 +13,7 @@ import styles from "./page.module.css";
 import { LevelLesson } from "@components/shared/LevelLesson/LevelLesson";
 import { LessonStartLearnButton } from "@/app/components/features/learning/LessonStartLearnButton";
 import { getRealId } from "@helpers/links";
-import { SITE_NAME } from "@/app/constants";
+import { SITE_NAME, SITE_URL } from "@/app/constants";
 
 export async function generateMetadata({
   params,
@@ -34,7 +34,7 @@ export async function generateMetadata({
 
   const imageOG = {
     url:
-      lesson.image || `${process.env.NEXT_PUBLIC_SITE_URL}/images/og-image.jpg`,
+      lesson.image || `${SITE_URL}/images/og-image.jpg`,
     width: 1200,
     height: 630,
     alt: `${lesson.title} - Осетинский язык онлайн`,

@@ -5,7 +5,7 @@ import { NEWS_CATEGORY } from "@navigate";
 import { getRealId } from "@helpers/links";
 import { NewsIndex } from "@/app/components/features/news/NewsIndex/NewsIndex";
 import EmptyLayout from "@/app/components/layout/EmptyLayout";
-import { SITE_NAME } from "@/app/constants";
+import { SITE_NAME, SITE_URL } from "@/app/constants";
 
 export async function generateMetadata({
   params,
@@ -25,7 +25,7 @@ export async function generateMetadata({
   }
 
   const imageOG = {
-    url: `${process.env.NEXT_PUBLIC_SITE_URL}/images/og-image.jpg`,
+    url: `${SITE_URL}/images/og-image.jpg`,
     width: 1200,
     height: 630,
     alt: `${category.title} - Осетинский язык онлайн`,

@@ -21,6 +21,7 @@ export function Translations({
 }: Props) {
   const [leftTranslation, setLeftTranslation] =
     useState<BilingualTranslationInterface | null>(null);
+
   const [rightTranslation, setRightTranslation] =
     useState<BilingualTranslationInterface | null>(null);
 

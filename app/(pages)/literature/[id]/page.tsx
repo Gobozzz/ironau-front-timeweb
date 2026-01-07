@@ -11,7 +11,7 @@ import FileIcon from "@/public/icons/file.svg";
 import Link from "next/link";
 import { EditorShow } from "@/app/components/shared/Editor/EditorShow/EditorShow";
 import { ArrowBack } from "@/app/components/ui/ArrowBack/ArrowBack";
-import { SITE_NAME } from "@/app/constants";
+import { SITE_NAME, SITE_URL } from "@/app/constants";
 
 export async function generateMetadata({
   params,
@@ -33,7 +33,7 @@ export async function generateMetadata({
   const imageOG = {
     url:
       literature.image ||
-      `${process.env.NEXT_PUBLIC_SITE_URL}/images/og-image.jpg`,
+      `${SITE_URL}/images/og-image.jpg`,
     width: 1200,
     height: 630,
     alt: `${literature.title} - Осетинский язык онлайн`,

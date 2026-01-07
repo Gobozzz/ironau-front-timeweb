@@ -14,7 +14,7 @@ import { LevelLesson } from "@components/shared/LevelLesson/LevelLesson";
 import { getRealId } from "@helpers/links";
 import { getCountLessonsWord } from "@helpers/words";
 import { CourseStartLearnButton } from "@components/features/learning/CourseStartLearnButton";
-import { SITE_NAME } from "@/app/constants";
+import { SITE_NAME, SITE_URL } from "@/app/constants";
 
 export async function generateMetadata({
   params,
@@ -35,7 +35,7 @@ export async function generateMetadata({
 
   const imageOG = {
     url:
-      course.image || `${process.env.NEXT_PUBLIC_SITE_URL}/images/og-image.jpg`,
+      course.image || `${SITE_URL}/images/og-image.jpg`,
     width: 1200,
     height: 630,
     alt: `${course.title} - Осетинский язык онлайн`,

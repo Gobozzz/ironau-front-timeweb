@@ -7,7 +7,7 @@ import { getRealId } from "@helpers/links";
 import { EditorShow } from "@/app/components/shared/Editor/EditorShow/EditorShow";
 import { ArrowBack } from "@/app/components/ui/ArrowBack/ArrowBack";
 import IndexLayout from "@/app/components/layout/IndexLayout";
-import { SITE_NAME } from "@/app/constants";
+import { SITE_NAME, SITE_URL } from "@/app/constants";
 
 export async function generateMetadata({
   params,
@@ -27,7 +27,7 @@ export async function generateMetadata({
   }
 
   const imageOG = {
-    url: `${process.env.NEXT_PUBLIC_SITE_URL}/images/og-image.jpg`,
+    url: `${SITE_URL}/images/og-image.jpg`,
     width: 1200,
     height: 630,
     alt: `${news.title} - Новости Осетии`,
