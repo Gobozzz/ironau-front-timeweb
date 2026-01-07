@@ -3,9 +3,8 @@
 import Link from "next/link";
 import styles from "./Social.module.css";
 import { VK } from "@components/ui/Icons/VK";
-import { Insta } from "@components/ui/Icons/Insta";
 import { TG } from "@components/ui/Icons/TG";
-import { Youtube } from "@components/ui/Icons/Youtube";
+import { TG_LINK, VK_LINK } from "@/app/constants";
 
 interface Props {
   className?: string;
@@ -14,18 +13,10 @@ interface Props {
 export function Social({ className = "" }: Props) {
   return (
     <div className={`${className} ${styles.wrapper}`}>
-      <Link
-        className={styles.link}
-        href={`${process.env.NEXT_PUBLIC_TG}`}
-        aria-label="Телеграм"
-      >
+      <Link className={styles.link} href={`${TG_LINK}`} aria-label="Телеграм">
         <TG />
       </Link>
-      <Link
-        className={styles.link}
-        href={`${process.env.NEXT_PUBLIC_VK}`}
-        aria-label="Вконтакте"
-      >
+      <Link className={styles.link} href={`${VK_LINK}`} aria-label="Вконтакте">
         <VK />
       </Link>
     </div>

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import AppLayout from "@components/layout/AppLayout";
 import Providers from "./components/layout/Providers";
-import { SITE_NAME } from "./constants";
+import { SITE_NAME, SITE_URL } from "./constants";
 
 export const metadata: Metadata = {
   // Основной title с шаблоном
@@ -34,16 +34,16 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "ru_RU",
-    url: `${process.env.NEXT_PUBLIC_SITE_URL}`,
-    siteName: process.env.SITE_NAME,
-    title: `${process.env.SITE_NAME} — изучение осетинского языка онлайн`,
+    url: `${SITE_URL}`,
+    siteName: SITE_NAME,
+    title: `${SITE_NAME} — изучение осетинского языка онлайн`,
     description: "Курсы, уроки, билингвы по осетинскому языку от носителей",
     images: [
       {
-        url: `${process.env.SITE_NAME}/images/og-image.jpg`,
+        url: `${SITE_NAME}/images/og-image.jpg`,
         width: 1200,
         height: 630,
-        alt: `${process.env.SITE_NAME} - Осетинский язык онлайн`,
+        alt: `${SITE_NAME} - Осетинский язык онлайн`,
       },
     ],
   },
@@ -51,9 +51,9 @@ export const metadata: Metadata = {
   // Twitter Cards
   twitter: {
     card: "summary_large_image",
-    title: `${process.env.SITE_NAME} — изучение осетинского языка онлайн`,
+    title: `${SITE_NAME} — изучение осетинского языка онлайн`,
     description: "Курсы, уроки, билингвы по осетинскому языку",
-    images: [`${process.env.SITE_NAME}/images/twitter-image.jpg`],
+    images: [`${SITE_NAME}/images/twitter-image.jpg`],
     creator: "@ironau_ru",
   },
 
@@ -74,7 +74,7 @@ export const metadata: Metadata = {
 
   // Автор и генератор
   authors: [
-    { name: "Ironau", url: `${process.env.NEXT_PUBLIC_SITE_URL}` },
+    { name: "Ironau", url: `${SITE_URL}` },
     { name: "Осетинский язык онлайн" },
   ],
   generator: "Next.js",
@@ -84,10 +84,10 @@ export const metadata: Metadata = {
 
   // Альтернативные языки
   alternates: {
-    canonical: `${process.env.NEXT_PUBLIC_SITE_URL}`,
+    canonical: `${SITE_URL}`,
     languages: {
-      "ru-RU": `${process.env.NEXT_PUBLIC_SITE_URL}`,
-      "x-default": `${process.env.NEXT_PUBLIC_SITE_URL}`,
+      "ru-RU": `${SITE_URL}`,
+      "x-default": `${SITE_URL}`,
       // Если будут версии на других языках
       // os: "https://ironau.ru/os",
     },
