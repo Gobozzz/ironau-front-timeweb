@@ -41,7 +41,8 @@ export function RedactorTranslations({ id }: Props) {
     return null;
   }
 
-  const [loadingAddLanguage, setLoadingAddLanguage] = useState(false);
+  const [loadingRefreshTranslations, setLoadingRefreshTranslations] =
+    useState(false);
 
   const [bilingual, setBilingual] = useState<BilingualShowInterface | null>(
     null
@@ -65,6 +66,27 @@ export function RedactorTranslations({ id }: Props) {
 
   const [openSuccessModal, setOpenSuccessModal] = useState<boolean>(false);
 
+  function refreshActiveTranslations() {
+    setLoadingRefreshTranslations(true);
+    setTimeout(() => {
+      setActiveTranslations((prev) => {
+        return {
+          left: prev.right,
+          right: prev.left,
+        };
+      });
+    }, 500);
+    setTimeout(() => {
+      setActiveTranslations((prev) => {
+        return {
+          left: prev.right,
+          right: prev.left,
+        };
+      });
+      setLoadingRefreshTranslations(false);
+    }, 1000);
+  }
+
   function changeActiveTranslations(newTrs: BilingualActiveTranslations) {
     setActiveTranslations(newTrs);
   }
@@ -86,6 +108,7 @@ export function RedactorTranslations({ id }: Props) {
         return { ...prev, right: null };
       });
     }
+    refreshActiveTranslations();
   }
 
   function addTranslation(language: BilingualLanguageInterface) {
@@ -121,24 +144,7 @@ export function RedactorTranslations({ id }: Props) {
         };
       });
     }
-    setLoadingAddLanguage(true);
-    setTimeout(() => {
-      setActiveTranslations((prev) => {
-        return {
-          left: prev.right,
-          right: prev.left,
-        };
-      });
-    }, 500);
-    setTimeout(() => {
-      setActiveTranslations((prev) => {
-        return {
-          left: prev.right,
-          right: prev.left,
-        };
-      });
-      setLoadingAddLanguage(false);
-    }, 800);
+    refreshActiveTranslations();
   }
 
   function deletePart(i: number) {
@@ -150,6 +156,7 @@ export function RedactorTranslations({ id }: Props) {
         };
       });
     });
+    refreshActiveTranslations();
   }
 
   function addPart() {
@@ -163,6 +170,7 @@ export function RedactorTranslations({ id }: Props) {
         };
       });
     });
+    refreshActiveTranslations();
   }
 
   function handleUpdateTranslations() {
@@ -261,7 +269,7 @@ export function RedactorTranslations({ id }: Props) {
         title="Билингва отправлена на модерацию"
       />
       <MegaTitle>{bilingual.title}</MegaTitle>
-      {!loadingAddLanguage && (
+      {!loadingRefreshTranslations && (
         <MenuLanguages
           languages={languages}
           changeActiveTranslations={changeActiveTranslations}
@@ -273,7 +281,7 @@ export function RedactorTranslations({ id }: Props) {
       )}
       <ErrorsInput errors={errors.message} />
       <ErrorsInput errors={errors.translations} />
-      {!loadingAddLanguage && (
+      {!loadingRefreshTranslations && (
         <Translations
           errors={errors}
           deletePart={deletePart}
@@ -282,7 +290,11 @@ export function RedactorTranslations({ id }: Props) {
           activeTranslations={activeTranslations}
         />
       )}
-      {loadingAddLanguage && <Loader size="lg" />}
+      {loadingRefreshTranslations && (
+        <div className="flex justify-center my-2.5">
+          <Loader size="lg" />
+        </div>
+      )}
       <button
         onClick={() => {
           addPart();
