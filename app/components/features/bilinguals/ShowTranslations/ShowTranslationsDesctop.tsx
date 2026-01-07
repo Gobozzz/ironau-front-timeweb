@@ -76,7 +76,7 @@ export function ShowTranslationsDesctop({ bilingual }: Props) {
             className="flex items-stretch gap-8 w-full"
           >
             <div className={styles.translation_part_desctop}>
-              <div className={styles.translation_part_number}>{index + 1}</div>
+              {/* <div className={styles.translation_part_number}>{index + 1}</div> */}
               {bilingual.translations[leftTranslation].parts[index].blocks.map(
                 (
                   block: { data: { text: string }; text: string },
@@ -94,7 +94,7 @@ export function ShowTranslationsDesctop({ bilingual }: Props) {
             </div>
             <div className={styles.line_inner}></div>
             <div className={styles.translation_part_desctop}>
-              <div className={styles.translation_part_number}>{index + 1}</div>
+              {/* <div className={styles.translation_part_number}>{index + 1}</div> */}
               {bilingual.translations[rightTranslation].parts[index].blocks.map(
                 (
                   block: { data: { text: string }; text: string },

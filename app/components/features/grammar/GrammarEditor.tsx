@@ -34,11 +34,11 @@ function getArrayWordsInString(text: string): string[] {
     const letter_lower = letter.toLowerCase();
     if (letters_punctuations.includes(letter_lower)) {
       word_string += letter;
-      words.push(word_string);
+      words.push(word_string.replace(`'`, "ʼ"));
       word_string = "";
     } else if (pattern_empty_letters.test(letter_lower)) {
       if (word_string.length > 0) {
-        words.push(word_string);
+        words.push(word_string.replace(`'`, "ʼ"));
       }
       words.push(letter);
       word_string = "";
@@ -48,7 +48,7 @@ function getArrayWordsInString(text: string): string[] {
   }
 
   if (word_string.trim().length > 0) {
-    words.push(word_string);
+    words.push(word_string.replace(`'`, "ʼ"));
   }
 
   return words;

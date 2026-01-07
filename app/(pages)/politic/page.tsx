@@ -16,7 +16,7 @@ export default function Page() {
       <PageTitle>Политика конфиденциальности</PageTitle>
       <div className={styles.section}>
         <p>
-          Ваша конфиденциальность важна для Вячеслава Иванова, владельца сайта{" "}
+          Ваша конфиденциальность важна для Иванова Вячеслава Геннадьевича, владельца сайта{" "}
           <a className={styles.link} href="https://ironau.ru" target="_blank" rel="noopener noreferrer">
             https://ironau.ru
           </a>
