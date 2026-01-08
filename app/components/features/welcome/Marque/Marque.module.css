@@ -35,4 +35,7 @@
     margin-bottom: 18px;
     height: 41px;
   }
+  .content {
+    line-height: 1;
+  }
 }
