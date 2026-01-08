@@ -17,7 +17,7 @@ export function ArrowUp() {
       // Дебаунсим проверку на 100ms
       timeoutRef.current = setTimeout(() => {
         const scrolled = window.scrollY;
-        
+
         const shouldShow = scrolled > 100;
 
         setIsVisible(shouldShow);
@@ -50,7 +50,8 @@ export function ArrowUp() {
       onClick={scrollToTop}
       aria-label="Прокрутить наверх"
     >
-      <img src="/icons/arrow-up.svg" alt="Стрелочка наверх" />
+      <img className={styles.arrow_white} src="/icons/arrow-up.svg" alt="Стрелочка наверх" />
+      <img className={styles.arrow_black} src="/icons/arrow-up-black.svg" alt="Стрелочка наверх" />
     </button>
   );
 }

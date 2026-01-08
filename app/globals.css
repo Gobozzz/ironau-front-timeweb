@@ -24,11 +24,17 @@
     url("/fonts/interMedium/Inter-Medium.woff2") format("woff");
 }
 
+@font-face {
+  font-family: "Helvetica";
+  src: url("/fonts/Helvetica/Helvetica.woff") format("woff");
+}
+
 :root {
   --max-width-screen: 1920px;
 
   --font-header: "Bebas Neue Cyrillic";
   --font-navigation: "Object Sans";
+  --font-paper: "Helvetica";
   --font-text: "Inter";
   --font-text-medium: "Inter Medium";
   --black: #131313;
@@ -51,6 +57,7 @@
   --color-foreground: var(--foreground);
   --font-header: var(--font-header);
   --font-navigation: var(--font-navigation);
+  --font-paper: var(--font-paper);
   --font-text: var(--font-text);
   --font-text-medium: var(--font-text-medium);
   --color-black: var(--black);
@@ -138,3 +145,13 @@ mark {
 }
 
 /* Editor */
+
+/* Glass */
+
+.glass_effect_bg {
+  background-color: rgba(245, 245, 245, 0.5);
+  -webkit-backdrop-filter: blur(2.25px);
+  backdrop-filter: blur(2.25px);
+}
+
+/* Glass */

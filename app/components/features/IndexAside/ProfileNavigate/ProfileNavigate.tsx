@@ -9,6 +9,7 @@ import { ProfileLink } from "@components/ui/ProfileLink/ProfileLink";
 import Image from "next/image";
 import lightIcon from "@/public/icons/light-theme.svg";
 import darkIcon from "@/public/icons/dark-theme.svg";
+import HomeIcon from "@/public/icons/home.svg";
 
 interface Props {
   className?: string;
@@ -27,7 +28,7 @@ export function ProfileNavigate({ className = "" }: Props) {
   return (
     <div className={`${styles.items} ${className}`}>
       <Link className={styles.item} href={HOME} aria-label="Домой">
-        <img src="/icons/home.svg" alt="Домой" />
+        <Image src={HomeIcon} alt="Домой" />
       </Link>
       <ProfileLink />
       <button onClick={handlerThemeClick} className={styles.item}>

@@ -1,8 +1,10 @@
 .title {
   display: inline-block;
-  font-size: 320px;
+  font-size: clamp(7.188rem, -0.005rem + 35.96vw, 20rem);
   line-height: 0.7;
   font-family: var(--font-header);
   user-select: none;
-  margin-bottom: 40px;
+  margin-bottom: clamp(1.25rem, 0.548rem + 3.51vw, 2.5rem);
 }
+
+

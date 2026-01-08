@@ -15,9 +15,10 @@ import { openModal } from "@/app/redux/slices/loginModalSlice";
 
 interface Props {
   className?: string;
+  callbackClick?: () => void;
 }
 
-export function ProfileLink({ className = "" }: Props) {
+export function ProfileLink({ className = "", callbackClick }: Props) {
   const dispatch = useDispatch<AppDispatch>();
   const router = useRouter();
   const { user, canRedirectedProfile } = useSelector(
@@ -42,7 +43,12 @@ export function ProfileLink({ className = "" }: Props) {
   return (
     <>
       <button
-        onClick={() => dispatch(openModal())}
+        onClick={() => {
+          if (callbackClick !== undefined) {
+            callbackClick();
+          }
+          dispatch(openModal());
+        }}
         className={`${styles.item} ${className}`}
         aria-label="Личный кабинет"
       >

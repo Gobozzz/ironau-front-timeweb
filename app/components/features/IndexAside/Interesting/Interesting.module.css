@@ -22,3 +22,24 @@
   font-family: var(--font-text-medium);
   border-bottom: 1px solid var(--color-gray);
 }
+
+@media (max-width: 1999px) {
+  .wrapper {
+    border: none;
+    padding: 0;
+  }
+  .item:last-child {
+    padding-top: 0px;
+    border-bottom: none;
+  }
+}
+
+@media (max-width: 799px) {
+  .title {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  .item {
+    padding-bottom: 20px;
+  }
+}

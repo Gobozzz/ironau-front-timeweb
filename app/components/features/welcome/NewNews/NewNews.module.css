@@ -1,14 +1,51 @@
-
 .news {
   display: grid;
   grid-template-columns: 1fr 1fr;
   column-gap: 26px;
   row-gap: 40px;
   margin-bottom: 40px;
+  width: 100%;
+  min-width: 706px;
+  max-width: 706px;
 }
 
 .more {
   font-size: 14px;
   font-family: var(--font-text-medium);
   text-decoration: underline;
+}
+
+@media (max-width: 1679px) {
+  .news {
+    min-width: 1px;
+    grid-template-columns: 1fr;
+  }
+  .news > *:nth-child(5),
+  .news > *:nth-child(6) {
+    display: none !important;
+  }
+}
+
+@media (max-width: 1399px) {
+  .news {
+    width: 100%;
+    max-width: 100%;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 650px) {
+  .news {
+    grid-template-columns: 1fr;
+  }
+  .news > *:nth-child(3),
+  .news > *:nth-child(4) {
+    display: none !important;
+  }
+  .more {
+    font-size: 12px;
+    display: block;
+    text-align: center;
+  }
 }

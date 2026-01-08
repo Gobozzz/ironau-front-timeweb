@@ -15,10 +15,10 @@
 }
 
 .content {
-    font-family: var(--font-header);
-    font-size: 44px;
-    line-height: 0.7;
-    user-select: none;
+  font-family: var(--font-header);
+  font-size: 44px;
+  line-height: 0.7;
+  user-select: none;
 }
 
 @keyframes marquee {
@@ -27,5 +27,11 @@
   }
   to {
     transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 800px) {
+  .marquee {
+    margin-bottom: 24px;
   }
 }

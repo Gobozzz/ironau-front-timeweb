@@ -17,3 +17,9 @@
 .link path {
   fill: var(--color-foreground);
 }
+
+@media (max-width: 1496px) {
+  .wrapper {
+    margin-bottom: 12px;
+  }
+}

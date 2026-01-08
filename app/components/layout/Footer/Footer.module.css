@@ -22,3 +22,22 @@
 .footer_flow * {
   color: var(--black);
 }
+
+@media (max-width: 799px) {
+  .links {
+    gap: 44px;
+  }
+
+  .footer {
+    padding: 64px 0 0 0;
+  }
+
+  .title {
+    font-size: 80px;
+    margin-bottom: 0px;
+  }
+  .links > a {
+    text-align: center;
+    font-size: 14px;
+  }
+}
