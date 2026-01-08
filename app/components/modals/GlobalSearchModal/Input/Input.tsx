@@ -14,6 +14,7 @@ export function Input({ className = "", value, callback }: Props) {
   return (
     <div className={`${styles.inner} ${className}`}>
       <Image
+        className={styles.lupa}
         src={searchIcon}
         alt="Поиск по сайту"
         aria-label="Поиск по сайту"

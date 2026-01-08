@@ -14,3 +14,17 @@
   font-size: 14px;
   color: var(--color-black) !important;
 }
+
+@media (max-width: 799px) {
+  .inner {
+    min-height: 44px;
+    column-gap: 12px;
+  }
+  .input {
+    font-size: 12px;
+  }
+  .lupa {
+    width: 15px;
+    height: 15px;
+  }
+}

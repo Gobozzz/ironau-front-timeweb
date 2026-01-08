@@ -8,10 +8,12 @@ import GlobalSearchModal from "@components/modals/GlobalSearchModal/GlobalSearch
 import { Mates } from "./components/shared/Mates/Mates";
 import { NewsPaperWrapper } from "./components/features/welcome/Newspaper/NewsPaperWrapper";
 import { Interesting } from "./components/features/IndexAside/Interesting/Interesting";
+import { SocialMobile } from "./components/shared/SocialMobile/SocialMobile";
 
 export default function Home() {
   return (
     <IndexLayout>
+      <SocialMobile />
       <GlobalSearchModal />
       <div className="flex items-start gap-22 mb-20 flex-wrap max-[1497px]:gap-5 max-[800px]:mb-11">
         <div>

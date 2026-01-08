@@ -2,10 +2,12 @@
 
 import { useEffect, useState, useRef } from "react";
 import styles from "./ArrowUp.module.css";
+import { usePathname } from "next/navigation";
 
 export function ArrowUp() {
   const [isVisible, setIsVisible] = useState(false);
   const timeoutRef = useRef<NodeJS.Timeout>(null);
+  const pathname = usePathname()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -46,7 +48,7 @@ export function ArrowUp() {
 
   return (
     <button
-      className={`${styles.arrow} ${styles.arrowVisible}`}
+      className={`${styles.arrow} ${styles.arrowVisible} ${pathname === "/" && window.innerWidth <= 799 ? styles.mobile : ''}`}
       onClick={scrollToTop}
       aria-label="Прокрутить наверх"
     >

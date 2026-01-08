@@ -9,6 +9,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/app/redux/store";
 import { closeModal } from "@slices/searchModalSlice";
 import api from "@api";
+import Image from "next/image";
+import KrestIcon from "@/public/icons/krest-close.svg";
 
 const Transition = React.forwardRef(function Transition(
   props: TransitionProps & {
@@ -96,11 +98,32 @@ export default function GlobalSearchModal() {
             background: "var(--white)",
             borderRadius: "16px",
             overflowY: "hidden",
+            "@media(max-width: 1460px)": {
+              maxWidth: "90%",
+            },
+            "@media(max-width: 800px)": {
+              height: "100vh",
+              maxHeight: "100vh",
+              maxWidth: "100%",
+              borderRadius: "0",
+              margin: "0",
+            },
           },
         }}
       >
-        <div className="h-full flex flex-col gap-8 p-5">
-          <Input value={searchText} callback={handleInput} />
+        <div className="h-full flex flex-col gap-8 p-5 max-[800px]:gap-3 max-[800px]:py-3 max-[800px]:px-2.5">
+          <div>
+            <div className="hidden mb-2 max-[800px]:block">
+              <button
+                onClick={handleClose}
+                className="flex! items-center justify-center min-h-11 min-w-11 ml-auto"
+                type="button"
+              >
+                <Image src={KrestIcon} alt="Закрыть" />
+              </button>
+            </div>
+            <Input value={searchText} callback={handleInput} />
+          </div>
           <Result
             loading={loading}
             searchText={searchText.trim()}

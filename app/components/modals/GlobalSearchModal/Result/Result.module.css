@@ -26,6 +26,7 @@
   align-items: center;
   justify-content: center;
   color: var(--black) !important;
+  text-align: center;
 }
 
 .item {
@@ -63,4 +64,26 @@
   font-family: var(--font-text-medium);
   color: var(--white) !important;
   background: var(--black) !important;
+}
+
+@media (max-width: 799px) {
+  .title {
+    font-size: 12px;
+  }
+  .item_title {
+    font-size: 14px;
+    margin-bottom: 0px;
+  }
+  .item {
+    flex-direction: column;
+    min-height: 123px;
+    max-height: 123px;
+    padding: 16px 12px;
+    gap: 16px;
+    align-items: stretch;
+    justify-content: space-between;
+  }
+  .link {
+    min-height: 44px;
+  }
 }

@@ -1,0 +1,68 @@
+.inner {
+  display: none;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  height: 68px;
+  align-items: center;
+  gap: 24px;
+  padding: 0 10px;
+  border-radius: 14px;
+  z-index: 5;
+}
+
+.item {
+  min-width: 44px;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.item:first-child path {
+  fill: var(--blue);
+  animation-name: tg_anim;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes tg_anim {
+  0%,
+  20%,
+  56%,
+  100% {
+    fill: var(--black);
+  }
+  23%,
+  53% {
+    fill: var(--blue);
+  }
+}
+
+.item:last-child path {
+  fill: var(--blue);
+  animation-name: vk_anim;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes vk_anim {
+  0%,
+  53%,
+  76%,
+  100% {
+    fill: var(--black);
+  }
+  56%,
+  73% {
+    fill: var(--blue);
+  }
+}
+
+@media (max-width: 799px) {
+  .inner {
+    display: flex;
+  }
+}
