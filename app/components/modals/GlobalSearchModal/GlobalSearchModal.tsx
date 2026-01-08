@@ -111,7 +111,7 @@ export default function GlobalSearchModal() {
           },
         }}
       >
-        <div className="h-full flex flex-col gap-8 p-5 max-[800px]:gap-3 max-[800px]:py-3 max-[800px]:px-2.5">
+        <div className="h-full flex flex-col gap-8 p-5 max-[800px]:gap-3 max-[800px]:pt-5 max-[800px]:pb-3 max-[800px]:px-2.5">
           <div>
             <div className="hidden mb-2 max-[800px]:block">
               <button
