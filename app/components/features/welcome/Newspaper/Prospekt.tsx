@@ -2,7 +2,7 @@
 
 import styles from "./Newspaper.module.css";
 import Image from "next/image";
-import ProspektImage from "@/public/images/paper-prospekt-black.png";
+import ProspektImage from "@/public/images/paper-prospekt-black.jpg";
 import { useRef } from "react";
 
 interface Props {}

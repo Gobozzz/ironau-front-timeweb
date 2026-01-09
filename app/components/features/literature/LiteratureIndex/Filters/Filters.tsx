@@ -3,6 +3,8 @@
 import { ArrowDown } from "@components/ui/Icons/ArrowDown";
 import styles from "./Filters.module.css";
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
+import FilterIcon from "@/public/icons/filter.svg";
 
 function generateYearIntervals(
   startYear: number = 1900,
@@ -32,6 +34,7 @@ interface Props {
 }
 
 export function Filters({ filters, setFilters }: Props) {
+  const [activeFilters, setActiveFilters] = useState<boolean>(false);
   const [filtersLocal, setFiltersLocal] = useState<LiteratureFilters>(filters);
   let timeoutUpdateFilters = useRef<NodeJS.Timeout | null>(null);
   const [openPeriod, setOpenPeriod] = useState<boolean>(false);
@@ -50,56 +53,91 @@ export function Filters({ filters, setFilters }: Props) {
   }, [filtersLocal]);
 
   return (
-    <div className={styles.inner}>
-      <div className={styles.title}>Фильтры</div>
-      <div className={styles.items}>
-        <div className={styles.item}>
-          <div className={styles.item_up}>
-            <div
-              onClick={() => setOpenPeriod((prev) => !prev)}
-              className={styles.item_title}
-            >
-              Периоды публикации
-            </div>
-            <button
-              onClick={() => setOpenPeriod((prev) => !prev)}
-              className={`${styles.item_arrow} ${
-                openPeriod ? "-rotate-180" : ""
-              }`}
-            >
-              <ArrowDown color="var(--color-foreground)" />
-            </button>
-          </div>
-          <div
-            className={`${styles.item_down} ${openPeriod ? styles.active : ""}`}
-          >
-            {generateYearIntervals().map((period, index) => (
+    <>
+      <div className="hidden max-[1200px]:block">
+        <button
+          onClick={() => {
+            const body = document.querySelector("body");
+            if (body) {
+              body.style.overflow = "hidden";
+            }
+            setActiveFilters(true);
+          }}
+          className={`glass_effect_bg ${styles.filter_open_button}`}
+          type="button"
+          aria-label="Фильтры"
+        >
+          <Image src={FilterIcon} alt="Фильтры" />
+        </button>
+      </div>
+      <div
+        onClick={() => {
+          const body = document.querySelector("body");
+          if (body) {
+            body.style.overflow = "auto";
+          }
+          setActiveFilters(false);
+        }}
+        className={`${styles.close_filters} ${
+          activeFilters ? styles.active : ""
+        }`}
+      ></div>
+      <div className={`${styles.inner} ${activeFilters ? styles.active : ""}`}>
+        <div className={styles.title}>Фильтры</div>
+        <div className={styles.items}>
+          <div className={styles.item}>
+            <div className={styles.item_up}>
+              <div
+                onClick={() => setOpenPeriod((prev) => !prev)}
+                className={styles.item_title}
+              >
+                Периоды публикации
+              </div>
               <button
-                onClick={() => {
-                  const period_f = period.replace(" — ", "_");
-                  if (filtersLocal.period === period_f) {
-                    setFiltersLocal((prev) => {
-                      return { ...prev, period: "" };
-                    });
-                  } else {
-                    setFiltersLocal((prev) => {
-                      return { ...prev, period: period_f };
-                    });
-                  }
-                }}
-                key={index}
-                className={`${styles.filter_button} ${
-                  period.replace(" — ", "_") === filtersLocal.period
-                    ? styles.active
-                    : ""
+                onClick={() => setOpenPeriod((prev) => !prev)}
+                className={`${styles.item_arrow} ${
+                  openPeriod ? "-rotate-180" : ""
                 }`}
               >
-                {period}
+                <ArrowDown color="var(--color-foreground)" />
               </button>
-            ))}
+            </div>
+            <div
+              className={`${styles.item_down} ${
+                openPeriod ? styles.active : ""
+              }`}
+            >
+              {generateYearIntervals().map((period, index) => (
+                <button
+                  onClick={() => {
+                    const period_f = period.replace(" — ", "_");
+                    if (filtersLocal.period === period_f) {
+                      setFiltersLocal((prev) => {
+                        return { ...prev, period: "" };
+                      });
+                    } else {
+                      setFiltersLocal((prev) => {
+                        return { ...prev, period: period_f };
+                      });
+                    }
+                    if (typeof window !== "undefined") {
+                      window.scrollTo({ top: 0, behavior: "smooth" });
+                    }
+                  }}
+                  key={index}
+                  className={`${styles.filter_button} ${
+                    period.replace(" — ", "_") === filtersLocal.period
+                      ? styles.active
+                      : ""
+                  }`}
+                >
+                  {period}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }

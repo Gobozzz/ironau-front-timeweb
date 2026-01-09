@@ -4,19 +4,23 @@ import type { PropsWithChildren } from "react";
 import Container from "@components/layout/Container";
 import { Footer } from "./Footer/Footer";
 import { ProfileNavigate } from "../features/IndexAside/ProfileNavigate/ProfileNavigate";
+import { MobileFixedElementsLayout } from "./MobileFixedElementsLayout/MobileFixedElementsLayout";
 
 export default function ShortLayout({ children }: PropsWithChildren<unknown>) {
   return (
-    <Container>
-      <div className="min-h-screen flex flex-col justify-between flex-auto">
-        <div>
-          <div className="mb-8">
-            <ProfileNavigate />
+    <>
+      <MobileFixedElementsLayout />
+      <Container>
+        <div className="min-h-screen flex flex-col justify-between flex-auto">
+          <div>
+            <div className="mb-8">
+              <ProfileNavigate />
+            </div>
+            <main>{children}</main>
           </div>
-          <main>{children}</main>
+          <Footer />
         </div>
-        <Footer />
-      </div>
-    </Container>
+      </Container>
+    </>
   );
 }

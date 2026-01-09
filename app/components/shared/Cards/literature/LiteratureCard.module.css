@@ -118,3 +118,19 @@
   justify-content: center;
   gap: 8px;
 }
+
+@media (max-width: 1199px) {
+  .period {
+    font-size: 10px;
+    height: 23px;
+    width: 94px;
+  }
+  .tag {
+    font-size: 10px;
+    height: 23px;
+    min-width: 64px;
+  }
+  .title {
+    font-size: 14px;
+  }
+}

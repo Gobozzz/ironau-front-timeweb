@@ -109,10 +109,10 @@ export function LiteratureIndex({}: Props) {
   }, [page, filters]);
 
   return (
-    <div className="flex items-start justify-between gap-x-5">
+    <div className="flex items-start justify-between gap-x-5 max-[1200px]:flex-col">
       <Search filters={filters} setFilters={setFilters} />
-      <div className="flex-auto">
-        <PageTitle>Литература</PageTitle>
+      <div className="flex-auto max-[1200px]:w-full">
+        <PageTitle className="max-[1200px]:hidden">Литература</PageTitle>
         <div className={styles.items}>
           {!loading &&
             items.length > 0 &&
@@ -120,7 +120,7 @@ export function LiteratureIndex({}: Props) {
               <LiteratureCard className="" key={item.id} data={item} />
             ))}
           {loading &&
-            Array.from({ length: 3 }).map((_, index) => (
+            Array.from({ length: 6 }).map((_, index) => (
               <CustomSkeleton key={index} height={320} />
             ))}
         </div>
@@ -131,6 +131,9 @@ export function LiteratureIndex({}: Props) {
           <div className={styles.paginate_inner}>
             <Paginate
               onClick={(page: number) => {
+                if (typeof window !== "undefined") {
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                }
                 setPage(page);
               }}
               pages={paginate}
