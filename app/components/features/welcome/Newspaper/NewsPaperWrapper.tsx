@@ -9,7 +9,8 @@ interface Props {}
 export function NewsPaperWrapper({}: Props) {
   return (
     <LazyLoadComponent>
-      <Newspaper />
+      {window.innerWidth < 800 && <NewspaperOld />}
+      {window.innerWidth >= 800 && <Newspaper />}
     </LazyLoadComponent>
   );
 }
