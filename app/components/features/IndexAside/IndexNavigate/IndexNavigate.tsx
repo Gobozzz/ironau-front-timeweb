@@ -41,7 +41,7 @@ const items: NavigateItem[] = [
   },
   {
     icon: spravochnikImage,
-    title: "Справочник",
+    title: "Справочная служба",
     href: SPRAVOCHNIK,
   },
   {
