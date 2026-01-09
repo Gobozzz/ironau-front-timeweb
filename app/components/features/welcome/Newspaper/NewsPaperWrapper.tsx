@@ -9,7 +9,7 @@ interface Props {}
 export function NewsPaperWrapper({}: Props) {
   return (
     <LazyLoadComponent>
-      <NewspaperOld />
+      <Newspaper />
     </LazyLoadComponent>
   );
 }
