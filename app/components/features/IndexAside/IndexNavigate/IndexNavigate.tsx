@@ -66,6 +66,12 @@ export function IndexNavigate({ className = "" }: Props) {
     <nav className={`${className} ${styles.items}`}>
       {items.map((item) => (
         <Link
+          onClick={() => {
+            const body = document.querySelector("body");
+            if (body) {
+              body.style.overflow = "auto";
+            }
+          }}
           key={item.title}
           href={item.href}
           className={styles.item}

@@ -24,3 +24,14 @@
   background: var(--black);
   color: var(--white);
 }
+
+@media (max-width: 1200px) {
+  .tabs {
+    padding: 8px;
+    margin-bottom: 20px;
+  }
+  .tab {
+    font-size: 16px;
+    height: 44px;
+  }
+}

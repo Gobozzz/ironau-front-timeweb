@@ -1,7 +1,13 @@
 .title {
-  font-size: 64px;
+  font-size: clamp(2.75rem, 2.295rem + 2.27vw, 4rem);
   font-family: var(--font-header);
   margin-bottom: 30px;
   user-select: none;
   line-height: 1;
+}
+
+@media (max-width: 1199px) {
+  .title {
+    margin-bottom: 24px;
+  }
 }

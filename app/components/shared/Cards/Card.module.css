@@ -2,8 +2,6 @@
   padding: 12px;
   border-radius: 16px;
   background: var(--light-gray) !important;
-  min-width: 404px;
-  max-width: 404px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -140,4 +138,10 @@
   font-size: 12px;
   color: var(--black);
   font-family: var(--font-navigation);
+}
+
+@media (max-width: 1200px) {
+  .title {
+    font-size: 14px;
+  }
 }

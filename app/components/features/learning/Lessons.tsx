@@ -106,10 +106,10 @@ export function Lessons({}: Props) {
         {!loading &&
           items.length > 0 &&
           items.map((item) => (
-            <LessonCard className="max-w-max!" key={item.id} data={item} />
+            <LessonCard className="w-full" key={item.id} data={item} />
           ))}
         {loading &&
-          Array.from({ length: 3 }).map((_, index) => (
+          Array.from({ length: 6 }).map((_, index) => (
             <CustomSkeleton key={index} height={320} />
           ))}
       </div>
@@ -117,6 +117,7 @@ export function Lessons({}: Props) {
         <div className={styles.paginate_inner}>
           <Paginate
             onClick={(page: number) => {
+              window.scrollTo({ top: 0, behavior: "smooth" });
               setPage(page);
             }}
             pages={paginate}

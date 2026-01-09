@@ -26,6 +26,7 @@ const Transition = React.forwardRef(function Transition(
 interface Props {}
 
 export default function LoginModal({}: Props) {
+  const user = useSelector((state: RootState) => state.auth.user);
   const { isOpen } = useSelector((state: RootState) => state.loginModal);
   const dispatch = useDispatch<AppDispatch>();
   const [activeTab, setActiveTab] = useState<"register" | "login">("login");
@@ -39,7 +40,7 @@ export default function LoginModal({}: Props) {
     dispatch(closeModal());
   }
 
-  if (!isClient) {
+  if (!isClient || user) {
     return null;
   }
 

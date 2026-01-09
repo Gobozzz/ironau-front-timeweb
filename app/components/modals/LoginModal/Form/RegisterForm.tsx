@@ -77,7 +77,7 @@ export function RegisterForm({ className = "" }: Props) {
           value={name}
           onChange={(e) => setName(e.target.value)}
           type="text"
-          placeholder="Иван Иванов"
+          placeholder="Газзаев Батраз"
           className={styles.input}
           autoComplete="username"
         />

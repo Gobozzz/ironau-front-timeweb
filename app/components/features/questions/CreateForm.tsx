@@ -102,7 +102,7 @@ export function CreateForm({}: Props) {
                   onChange={(e) => setEmail(e.target.value)}
                   className={styles.form_item_input}
                   type="email"
-                  placeholder="gobozov@gmail.com"
+                  placeholder="gobozovbogdan@gmail.com"
                 />
               </div>
               {!successCreate && (

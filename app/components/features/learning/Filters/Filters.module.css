@@ -27,6 +27,7 @@
 
 .levels {
   display: flex;
+  flex-wrap: wrap;
   align-items: end;
   gap: 4px;
 }
@@ -37,6 +38,7 @@
   gap: 4px;
   padding: 5px 10px;
   min-height: 44px;
+  max-height: 44px;
   background: var(--light-gray);
   border-radius: 8px;
   font-size: 12px;
@@ -45,8 +47,8 @@
 }
 
 .galochka_inner {
-  width: 20px;
-  height: 20px;
+  min-width: 20px;
+  min-height: 20px;
   border-radius: 4px;
   display: flex;
   align-items: center;
@@ -61,4 +63,27 @@
 
 .galochka.active {
   display: block;
+}
+
+@media (max-width: 1199px) {
+  .inner {
+    flex-direction: column;
+    align-items: stretch;
+    margin-bottom: 20px;
+  }
+  .levels {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    width: 100%;
+    max-width: 100%;
+  }
+  .level {
+    padding: 12px 0px 12px 6px;
+  }
+  .galochka_inner {
+    margin-right: 12px;
+  }
+  .search_filter {
+    max-width: 408px;
+  }
 }

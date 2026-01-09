@@ -1,5 +1,6 @@
 import api from "@api";
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { closeModal } from "./loginModalSlice";
 
 export interface AuthState {
   user: {
@@ -37,9 +38,10 @@ export interface RegisterData {
 
 export const login = createAsyncThunk(
   "auth/login",
-  async (data: LoginData, { rejectWithValue }) => {
+  async (data: LoginData, { rejectWithValue, dispatch }) => {
     try {
       const response = await api.post("/login", data);
+      dispatch(closeModal());
       return response.data.user;
     } catch (err: any) {
       let errors;
@@ -55,15 +57,16 @@ export const login = createAsyncThunk(
 
 export const register = createAsyncThunk(
   "auth/register",
-  async (data: RegisterData, { rejectWithValue }) => {
+  async (data: RegisterData, { rejectWithValue, dispatch }) => {
     try {
       const response = await api.post("/register", data);
+      dispatch(closeModal());
       return response.data.user;
     } catch (err: any) {
       let errors;
       if (err.response?.data?.errors) {
         errors = err.response.data.errors;
-      }else {
+      } else {
         errors = { message: ["Произошла ошибка при регистрации"] };
       }
       return rejectWithValue(errors);

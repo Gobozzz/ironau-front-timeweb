@@ -69,7 +69,7 @@ export function Form({}: Props) {
           <input
             className={styles.form_item_input}
             type="text"
-            placeholder="Артур"
+            placeholder="Геворгизов Артур"
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
@@ -96,7 +96,7 @@ export function Form({}: Props) {
             </button>
           )}
           {success && (
-            <div className="text-sm text-black!">
+            <div className="text-sm text-black! text-center">
               Заявка отправлена, с вами свяжутся позже
             </div>
           )}

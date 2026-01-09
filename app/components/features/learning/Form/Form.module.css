@@ -9,12 +9,12 @@
 }
 
 .title {
-  font-size: 72px;
+  font-size: clamp(2.5rem, 1.773rem + 3.64vw, 4.5rem);
   line-height: 1;
   font-family: var(--font-header);
   margin-bottom: 24px;
   user-select: none;
-    color: var(--black);
+  color: var(--black);
 }
 
 .subtitle {
@@ -69,4 +69,17 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+@media (max-width: 1199px) {
+  .inner {
+    padding: 0;
+    box-shadow: none;
+    margin-top: 64px;
+  }
+
+  .subtitle {
+    font-size: 12px;
+  }
+
 }

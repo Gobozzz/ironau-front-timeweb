@@ -76,7 +76,7 @@ export function MobileFixedElementsLayout({}: Props) {
       )}
       <div className={`${styles.menu} ${activeMenu ? styles.active : ""}`}>
         <div className={styles.menu_tools}>
-          <ProfileLink callbackClick={() => setActiveMenu(false)} />
+          <ProfileLink callbackClick={closeMenu} />
           <button
             onClick={handlerThemeClick}
             className={styles.color_theme_button}

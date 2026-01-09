@@ -9,3 +9,11 @@
 .paginate_inner {
   max-width: 1300px;
 }
+
+@media (max-width: 1560px) {
+  .items {
+    max-width: 1090px;
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+    gap: clamp(1.5rem, -2.5rem + 5.33vw, 2.5rem);
+  }
+}

@@ -18,3 +18,9 @@
   user-select: none;
   font-family: var(--font-navigation);
 }
+
+@media (max-width: 1199px) {
+  .items {
+    margin-bottom: 0px;
+  }
+}
