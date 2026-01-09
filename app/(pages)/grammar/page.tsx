@@ -14,7 +14,7 @@ export default function Page() {
     <IndexLayout>
       <div>
         <PageTitle>Правописание</PageTitle>
-        <p className="text-base max-w-[1000px] mb-6 select-none">
+        <p className="text-base max-w-[1000px] mb-6 select-none max-[1200px]:text-[12px] max-[1200px]:mb-13">
           Сервис предназначен для тех, кому важна точность и грамотность текстов
           на осетинском языке. Благодаря нашим услугам ваши тексты будут
           свободны от ошибок и станут выразительными инструментами общения и

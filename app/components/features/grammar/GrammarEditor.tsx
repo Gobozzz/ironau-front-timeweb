@@ -237,7 +237,7 @@ export function GrammarEditor({}: Props) {
           onClick={handlerDownloadTextFile}
         >
           <Image src={FileIcon} alt="Скачать текстом" />
-          Скачать текст PDF файлом
+          Скачать текст TXT файлом
         </button>
       </div>
 

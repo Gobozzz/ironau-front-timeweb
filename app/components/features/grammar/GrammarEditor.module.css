@@ -121,3 +121,13 @@
   font-size: 12px;
   font-family: var(--font-text-medium);
 }
+
+@media (max-width: 1199px) {
+  .tools {
+    flex-direction: column;
+  }
+  .tools > * {
+    width: 100%;
+    max-width: 100%;
+  }
+}
