@@ -95,7 +95,7 @@ export function Newspaper({}: Props) {
           <Panarama />
         </div>
       </div>
-      {/* <div className={styles.aside}>
+      <div className={styles.aside}>
         <Typewriter
           initialDelay={550}
           text={"Цалдæр <br /> анекдоты"}
@@ -122,7 +122,7 @@ export function Newspaper({}: Props) {
             />
           </div>
         ))}
-      </div> */}
+      </div>
     </div>
   );
 }
