@@ -106,7 +106,7 @@ export function Courses({}: Props) {
         {!loading &&
           items.length > 0 &&
           items.map((item) => (
-            <CourseCard className="max-w-max!" key={item.id} data={item} />
+            <CourseCard className="w-full" key={item.id} data={item} />
           ))}
         {loading &&
           Array.from({ length: 3 }).map((_, index) => (
