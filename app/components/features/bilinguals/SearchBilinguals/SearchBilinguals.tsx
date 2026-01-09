@@ -68,7 +68,9 @@ export function SearchBilinguals({ filters, setFilters }: Props) {
 
   return (
     <div className={styles.inner}>
-      <ProfileNavigate className="m-0!" />
+      <div className="max-[1200px]:hidden">
+        <ProfileNavigate className="m-0!" />
+      </div>
       <div className={styles.search}>
         <Image src={SearchIcon} alt="Поиск" />
         <input

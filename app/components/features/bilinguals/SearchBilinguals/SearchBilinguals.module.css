@@ -65,3 +65,24 @@
 .tag.active {
   border: 2px solid var(--blue);
 }
+
+@media (max-width: 1199px) {
+  .inner {
+    min-width: 1px;
+    width: 100%;
+    max-width: 100%;
+    position: static;
+    top: 0;
+    height: auto;
+    margin-bottom: 64px;
+  }
+  .tags {
+    max-height: 125px;
+  }
+  .tags_inner {
+    gap: 16px;
+  }
+  .tags_title {
+    font-size: 16px;
+  }
+}
