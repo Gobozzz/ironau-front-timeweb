@@ -2,7 +2,6 @@
 
 import { PROFILE } from "@navigate";
 import styles from "./ProfileLink.module.css";
-import LoginModal from "@components/modals/LoginModal/LoginModal";
 import Link from "next/link";
 import { useEffect } from "react";
 import iconLk from "@/public/icons/lk.svg";
@@ -54,7 +53,6 @@ export function ProfileLink({ className = "", callbackClick }: Props) {
       >
         <Image src={iconLk} alt="Личный кабинет" />
       </button>
-      <LoginModal />
     </>
   );
 }

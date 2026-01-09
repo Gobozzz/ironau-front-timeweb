@@ -19,10 +19,10 @@
 }
 
 .title {
-  font-size: 80px;
+  font-size: clamp(2.5rem, 1.591rem + 4.55vw, 5rem);
   line-height: 1;
   font-family: var(--font-header);
-  margin-bottom: 32px;
+  margin-bottom: clamp(1.25rem, 0.977rem + 1.36vw, 2rem);
   color: var(--black) !important;
   user-select: none;
 }
@@ -48,4 +48,21 @@
 .tab.active {
   background: var(--blue) !important;
   color: var(--white) !important;
+}
+
+@media (max-width: 1199px) {
+  .right_part {
+    display: none;
+  }
+  .left_part {
+    flex: 1;
+    padding: 20px 10px;
+  }
+  .tabs {
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+  .tab {
+    font-size: 14px;
+  }
 }

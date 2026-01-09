@@ -51,3 +51,9 @@
   font-family: var(--font-text-medium);
   user-select: none;
 }
+
+@media (max-width: 1199px) {
+  .form {
+    gap: 20px;
+  }
+}

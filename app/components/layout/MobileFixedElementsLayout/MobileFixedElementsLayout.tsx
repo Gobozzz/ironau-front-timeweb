@@ -16,6 +16,7 @@ import { ProfileLink } from "../../ui/ProfileLink/ProfileLink";
 import { useTheme } from "next-themes";
 import lightIcon from "@/public/icons/light-theme.svg";
 import darkIcon from "@/public/icons/dark-theme.svg";
+import LoginModal from "../../modals/LoginModal/LoginModal";
 
 interface Props {}
 
@@ -53,6 +54,7 @@ export function MobileFixedElementsLayout({}: Props) {
 
   return (
     <>
+      <LoginModal />
       <button onClick={openMenu} className={`glass_effect_bg ${styles.burger}`}>
         <div className={styles.burger_line}></div>
         <div className={styles.burger_line}></div>
@@ -75,7 +77,10 @@ export function MobileFixedElementsLayout({}: Props) {
       <div className={`${styles.menu} ${activeMenu ? styles.active : ""}`}>
         <div className={styles.menu_tools}>
           <ProfileLink callbackClick={() => setActiveMenu(false)} />
-          <button onClick={handlerThemeClick} className={styles.color_theme_button}>
+          <button
+            onClick={handlerThemeClick}
+            className={styles.color_theme_button}
+          >
             {mounted && (
               <Image
                 src={theme === "light" ? darkIcon : lightIcon}

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Dialog, Slide } from "@mui/material";
 import { TransitionProps } from "@mui/material/transitions";
 import styles from "./LoginModal.module.css";
@@ -12,6 +12,7 @@ import Image from "next/image";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "@/app/redux/store";
 import { closeModal } from "@/app/redux/slices/loginModalSlice";
+import KrestIcon from "@/public/icons/krest-close.svg";
 
 const Transition = React.forwardRef(function Transition(
   props: TransitionProps & {
@@ -28,12 +29,25 @@ export default function LoginModal({}: Props) {
   const { isOpen } = useSelector((state: RootState) => state.loginModal);
   const dispatch = useDispatch<AppDispatch>();
   const [activeTab, setActiveTab] = useState<"register" | "login">("login");
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  function handleClose() {
+    dispatch(closeModal());
+  }
+
+  if (!isClient) {
+    return null;
+  }
 
   return (
     <>
       <Dialog
         open={isOpen}
-        onClose={() => dispatch(closeModal())}
+        onClose={handleClose}
         fullWidth={true}
         maxWidth={false}
         scroll="body"
@@ -50,10 +64,24 @@ export default function LoginModal({}: Props) {
             maxWidth: "1000px",
             background: "var(--white)",
             borderRadius: "12px",
+            "@media(max-width: 1199px)": {
+              maxWidth: "100%",
+              margin: "0",
+              maxHeight: "90vh",
+            },
           },
         }}
       >
-        <div className="h-full flex items-stretch">
+        <div className="h-full flex items-stretch relative">
+          <div className="hidden max-[1200px]:block">
+            <button
+              onClick={handleClose}
+              className="absolute top-4 right-2.5 min-w-11 min-h-11 flex! items-center justify-center"
+              type="button"
+            >
+              <Image src={KrestIcon} alt="Закрыть" />
+            </button>
+          </div>
           <div className={styles.left_part}>
             <div className={styles.title}>ЛИЧНЫЙ КАБИНЕТ</div>
             <div className={styles.tabs}>

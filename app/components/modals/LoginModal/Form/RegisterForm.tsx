@@ -7,6 +7,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "@/app/redux/store";
 import { register } from "@slices/authSlice";
 import { ErrorsInput } from "@components/ui/ErrorsInput/ErrorsInput";
+import Link from "next/link";
+import { POLITIC } from "@/app/navigate";
 
 interface Props {
   className?: string;
@@ -94,13 +96,15 @@ export function RegisterForm({ className = "" }: Props) {
             setChecked(event.target.checked)
           }
         />
-        <div
+        <Link
+          target="_blank"
+          href={POLITIC}
           className={`${styles.checked_text} ${
             checkedError ? "text-red-600!" : ""
           }`}
         >
           Я соглашаюсь на обработку моих персональных данных
-        </div>
+        </Link>
       </div>
     </form>
   );
