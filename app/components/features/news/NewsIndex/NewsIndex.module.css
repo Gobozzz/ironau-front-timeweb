@@ -86,3 +86,151 @@
   right: max(60px, calc((100vw - var(--max-width-screen)) / 2 + 60px));
   z-index: 3;
 }
+
+.filter_open_button {
+  position: fixed;
+  z-index: 5;
+  top: 20px;
+  left: 70px;
+  min-width: 44px;
+  min-height: 44px;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+}
+
+.close_filters {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9;
+  background: black;
+  opacity: 0.5;
+  width: 100%;
+  height: 100%;
+}
+
+.close_filters.active {
+  display: block;
+}
+
+.filters_date_mobile {
+  display: none;
+}
+
+.mobile_date_button {
+  position: fixed;
+  top: 20px;
+  z-index: 5;
+  left: 130px;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.mobile_date_filters_close {
+  display: none;
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9;
+  background: black;
+  opacity: 0.5;
+}
+
+.mobile_date_filters_close.active {
+  display: block;
+}
+
+.mobile_date_filters_inner {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 10;
+  background: var(--white);
+  border-radius: 12px 12px 0 0;
+  transform: translateY(110%);
+  transition: transform 300ms;
+}
+
+.mobile_date_filters_inner.active {
+  transform: translateY(0);
+}
+
+.mobile_date_filters_sorted_inner {
+  max-width: 250px;
+  margin: 0 auto;
+  padding: 10px 0;
+}
+
+.mobile_date_filters_calendar_inner > div > div {
+  border: 0 !important;
+}
+
+@media (max-width: 1500px) {
+  .items {
+    max-width: 1000px;
+  }
+}
+
+@media (max-width: 1300px) {
+  .items {
+    max-width: 900px;
+  }
+}
+
+@media (max-width: 1199px) {
+  .filters_date_mobile {
+    display: block;
+  }
+  .items {
+    width: 100%;
+    max-width: 100%;
+  }
+  .aside {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    max-height: 100vh;
+    overflow-y: auto;
+    z-index: 10;
+    width: 260px;
+    min-width: 260px;
+    max-width: 260px;
+    background: var(--white);
+    padding: 24px 12px;
+    transform: translate(-110%);
+    transition: transform 300ms;
+  }
+  .aside.active {
+    transform: translateX(0);
+  }
+  .news_category_title {
+    color: var(--black);
+    font-size: 16px;
+  }
+  .filters {
+    display: none;
+  }
+
+  .main {
+    width: 100%;
+  }
+
+  .inner {
+    display: block;
+  }
+
+  .items {
+    max-width: 100%;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+  }
+}

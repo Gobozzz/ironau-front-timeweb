@@ -1,9 +1,11 @@
 "use client";
 
+import Image from "next/image";
+import styles from "./NewsIndex.module.css";
 import Calendar from "@/app/components/shared/Calendar/Calendar";
 import CalendarIcon from "@/public/icons/calendar.svg";
-import Image from "next/image";
 import { useState } from "react";
+import { SortedNews } from "./SortedNews";
 
 interface Props {
   filters: NewsFilters;
@@ -17,8 +19,8 @@ const formatDate = (date: Date): string => {
   return `${year}-${month}-${day}`;
 };
 
-export function DatesFilter({ filters, setFilters }: Props) {
-  const [openCalendar, setOpenCalendar] = useState<boolean>(false);
+export function DatesFilterMobile({ filters, setFilters }: Props) {
+  const [activeFilters, setActiveFilters] = useState<boolean>(false);
 
   function handlerSelectedDates(dates: Date[]) {
     if (typeof window !== "undefined") {
@@ -52,32 +54,44 @@ export function DatesFilter({ filters, setFilters }: Props) {
   }
 
   return (
-    <>
+    <div className={styles.filters_date_mobile}>
+      <button
+        onClick={() => {
+          const body = document.querySelector("body");
+          if (body) {
+            body.style.overflow = "hidden";
+          }
+          setActiveFilters(true);
+        }}
+        className={`glass_effect_bg  ${styles.mobile_date_button}`}
+        type="button"
+      >
+        <Image src={CalendarIcon} alt="Дата" />
+      </button>
       <div
-        onClick={() => setOpenCalendar(false)}
-        className={`${
-          openCalendar ? "block" : "hidden"
-        } fixed inset-0 w-full h-full bg-black z-19 opacity-30`}
+        onClick={() => {
+          const body = document.querySelector("body");
+          if (body) {
+            body.style.overflow = "auto";
+          }
+          setActiveFilters(false);
+        }}
+        className={`${styles.mobile_date_filters_close} ${
+          activeFilters ? styles.active : ""
+        }`}
       ></div>
-      <div className="relative">
-        <div
-          className={`${
-            openCalendar ? "block" : "hidden"
-          } absolute bottom-0 left-0 -translate-x-full translate-y-full z-20`}
-        >
-          <Calendar
-            close={() => setOpenCalendar(false)}
-            onSelectDates={(dates) => handlerSelectedDates(dates)}
-          />
+      <div
+        className={`${styles.mobile_date_filters_inner} ${
+          activeFilters ? styles.active : ""
+        }`}
+      >
+        <div className={styles.mobile_date_filters_sorted_inner}>
+          <SortedNews filters={filters} setFilters={setFilters} />
         </div>
-        <button
-          onClick={() => setOpenCalendar(true)}
-          className="flex! items-center justify-center min-w-13 min-h-13 bg-gray-light! rounded-xl"
-          type="button"
-        >
-          <Image src={CalendarIcon} alt="Календарь" />
-        </button>
+        <div className={styles.mobile_date_filters_calendar_inner}>
+          <Calendar onSelectDates={(dates) => handlerSelectedDates(dates)} />
+        </div>
       </div>
-    </>
+    </div>
   );
 }

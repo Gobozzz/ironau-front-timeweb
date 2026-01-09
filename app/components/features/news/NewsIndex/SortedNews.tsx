@@ -49,6 +49,9 @@ export function SortedNews({ filters, setFilters }: Props) {
             <button
               className="text-base text-left min-h-11 select-none text-black!"
               onClick={() => {
+                if (typeof window !== "undefined") {
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                }
                 setFilters((prev) => {
                   const prev_filters = { ...prev };
                   prev_filters.sorted = sorted.filter;

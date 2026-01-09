@@ -11,6 +11,8 @@ import CustomSkeleton from "@/app/components/ui/CustomSkeleton/CustomSkeleton";
 import { Paginate } from "@/app/components/shared/Paginate/Paginate";
 import { SortedNews } from "./SortedNews";
 import { DatesFilter } from "./DatesFilter";
+import Image from "next/image";
+import { DatesFilterMobile } from "./DatesFilterMobile";
 
 interface Props {
   category?: NewsCategory | null;
@@ -124,7 +126,7 @@ export function NewsIndex({ category = null }: Props) {
               <NewsCard className="" key={item.id} data={item} />
             ))}
           {loading &&
-            Array.from({ length: 3 }).map((_, index) => (
+            Array.from({ length: 6 }).map((_, index) => (
               <CustomSkeleton key={index} height={320} />
             ))}
           {!loading && items.length === 0 && (
@@ -135,6 +137,9 @@ export function NewsIndex({ category = null }: Props) {
           <div className={styles.paginate_inner}>
             <Paginate
               onClick={(page: number) => {
+                if (typeof window !== "undefined") {
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                }
                 setPage(page);
               }}
               pages={paginate}
@@ -146,6 +151,7 @@ export function NewsIndex({ category = null }: Props) {
         <SortedNews filters={filters} setFilters={setFilters} />
         <DatesFilter filters={filters} setFilters={setFilters} />
       </div>
+      <DatesFilterMobile filters={filters} setFilters={setFilters} />
     </div>
   );
 }

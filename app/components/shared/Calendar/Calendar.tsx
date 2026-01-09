@@ -37,20 +37,20 @@ function Calendar({ onSelectDates, close }: CalendarProps) {
   const calendarRef = useRef<HTMLDivElement>(null);
 
   // Обработчик клика вне календаря
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (
-        calendarRef.current &&
-        !calendarRef.current.contains(event.target as Node)
-      ) {
-        if (close) close();
-      }
-    };
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [close]);
+  // useEffect(() => {
+  //   const handleClickOutside = (event: MouseEvent) => {
+  //     if (
+  //       calendarRef.current &&
+  //       !calendarRef.current.contains(event.target as Node)
+  //     ) {
+  //       if (close) close();
+  //     }
+  //   };
+  //   document.addEventListener("mousedown", handleClickOutside);
+  //   return () => {
+  //     document.removeEventListener("mousedown", handleClickOutside);
+  //   };
+  // }, [close]);
 
   const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
   const firstDayWeekday = new Date(currentYear, currentMonth, 1).getDay();
@@ -120,7 +120,7 @@ function Calendar({ onSelectDates, close }: CalendarProps) {
   const monthYearLabel = `${monthNames[currentMonth]} ${currentYear}`;
 
   return (
-    <div style={{ position: "relative", userSelect:"none" }}>
+    <div style={{ position: "relative", userSelect: "none" }}>
       <div
         ref={calendarRef}
         style={{
@@ -149,7 +149,9 @@ function Calendar({ onSelectDates, close }: CalendarProps) {
           >
             <Image src={ArrowLeftIcon} alt="Стрелка влево" />
           </button>
-          <div className="text-[14px] font-navigation text-black!">{monthYearLabel}</div>
+          <div className="text-[14px] font-navigation text-black!">
+            {monthYearLabel}
+          </div>
           <button
             className="min-h-11 min-w-11 flex! items-center justify-center"
             onClick={handleNextMonth}

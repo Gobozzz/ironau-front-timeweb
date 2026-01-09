@@ -112,7 +112,7 @@ export function LiteratureIndex({}: Props) {
     <div className="flex items-start justify-between gap-x-5 max-[1200px]:flex-col">
       <Search filters={filters} setFilters={setFilters} />
       <div className="flex-auto max-[1200px]:w-full">
-        <PageTitle className="max-[1200px]:hidden">Литература</PageTitle>
+        <PageTitle>Литература</PageTitle>
         <div className={styles.items}>
           {!loading &&
             items.length > 0 &&
