@@ -4,8 +4,9 @@ import { SectionTitle } from "@components/ui/SectionTitle/SectionTitle";
 import styles from "./PersonalData.module.css";
 import Link from "next/link";
 import { PROFILE_EDIT } from "@navigate";
-import { useSelector } from "react-redux";
-import { RootState } from "@/app/redux/store";
+import { useDispatch, useSelector } from "react-redux";
+import { AppDispatch, RootState } from "@/app/redux/store";
+import { logout } from "@/app/redux/slices/authSlice";
 
 interface Props {
   className?: string;
@@ -13,6 +14,7 @@ interface Props {
 
 export function PersonalData({ className = "" }: Props) {
   const { user } = useSelector((state: RootState) => state.auth);
+  const dispatch = useDispatch<AppDispatch>();
 
   return (
     <div className={`${className}`}>
@@ -35,6 +37,14 @@ export function PersonalData({ className = "" }: Props) {
         <Link className={styles.link} href={PROFILE_EDIT}>
           Редактировать данные
         </Link>
+        <div className="hidden max-[1200px]:block">
+          <button
+            onClick={() => dispatch(logout())}
+            className={styles.logout_btn_mobile}
+          >
+            Выход
+          </button>
+        </div>
       </div>
     </div>
   );

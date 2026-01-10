@@ -52,7 +52,7 @@ export default function TextCreateModal({
             maxWidth: "700px",
             background: "var(--light-gray)",
             borderRadius: "16px",
-            overflowY: "hidden",
+            overflowY: "auto",
           },
         }}
       >

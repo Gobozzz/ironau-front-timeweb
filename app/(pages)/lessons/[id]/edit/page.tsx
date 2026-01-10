@@ -12,6 +12,10 @@ import CustomSkeleton from "@components/ui/CustomSkeleton/CustomSkeleton";
 import { AsideExercises } from "@components/features/lessonEdit/AsideExercises/AsideExercises";
 import { EditExercises } from "@components/features/lessonEdit/EditExercises/EditExercises";
 import { SuccessModal } from "@components/modals/SuccessModal/SuccessModal";
+import Link from "next/link";
+import { LESSON_CREATE } from "@/app/navigate";
+import Image from "next/image";
+import ArrowUp from "@/public/icons/arrow-up.svg";
 
 export default function Page() {
   const params = useParams();
@@ -97,9 +101,17 @@ export default function Page() {
           open={isOpenSuccessModal}
           close={() => setIsOpenSuccessModal(false)}
         />
+        <div className="hidden max-[1200px]:block">
+          <Link
+            className="bg-blue min-w-11 min-h-11 fixed top-5 left-2.5 z-7 rounded-full flex items-center justify-center -rotate-90"
+            href={LESSON_CREATE}
+          >
+            <Image src={ArrowUp} alt="Назад" />
+          </Link>
+        </div>
         <div className="">
           <MegaTitle>Редактор уроков</MegaTitle>
-          {loadingLesson && <CustomSkeleton height={50} width={320} />}
+          {loadingLesson && <CustomSkeleton height={50} width={290} />}
           {!loadingLesson && <PageTitle>{lesson.title}</PageTitle>}
           <button
             className={`${styles.submit_btn} ${
@@ -110,7 +122,7 @@ export default function Page() {
           >
             Отправить на модерацию
           </button>
-          <div className="flex items-start gap-10">
+          <div className="flex items-start gap-10 max-[1200px]:block">
             <AsideExercises setExercises={setExercises} />
             <EditExercises
               loadingExercise={loadingExercise}

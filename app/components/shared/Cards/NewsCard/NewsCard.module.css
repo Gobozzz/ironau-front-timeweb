@@ -71,6 +71,13 @@
   background: var(--light-gray);
 }
 
+@media (max-width: 1200px) {
+  .button_delete {
+    width: 44px;
+    height: 44px;
+  }
+}
+
 @media (max-width: 800px) {
   .title {
     font-size: clamp(0.875rem, 0.625rem + 1.25vw, 1.25rem);

@@ -29,3 +29,19 @@
   padding: 10px;
   min-height: 64px;
 }
+
+@media (max-width: 1199px) {
+  .title {
+    font-size: 44px;
+  }
+  .subtitle {
+    font-size: 10px;
+  }
+  .button {
+    font-size: 14px;
+    width: 100%;
+    max-width: 100%;
+    min-height: 44px;
+    margin: 0;
+  }
+}

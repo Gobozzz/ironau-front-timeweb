@@ -28,3 +28,32 @@
   background: var(--color-foreground);
   color: var(--color-background);
 }
+
+@media (max-width: 1199px) {
+  .inner {
+    flex-direction: column;
+    gap: 20px;
+    align-items: start;
+  }
+  .button {
+    min-height: 44px;
+    min-width: 1px;
+    width: 100%;
+    max-width: 100%;
+  }
+  .button_lesson,
+  .button_course_added {
+    width: auto;
+    position: fixed;
+    left: 10px;
+    right: 10px;
+    z-index: 4;
+  }
+  .button_lesson {
+    bottom: 64px;
+  }
+
+  .button_course_added {
+    bottom: 10px;
+  }
+}

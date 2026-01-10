@@ -26,6 +26,7 @@
 .link {
   height: 44px;
   border-radius: 14px;
+  width: 100%;
   max-width: 380px;
   display: flex;
   align-items: center;
@@ -34,4 +35,28 @@
   color: var(--color-background);
   font-size: 14px;
   font-family: var(--font-text-medium);
+}
+
+.logout_btn_mobile {
+  height: 44px;
+  border-radius: 14px;
+  width: 100%;
+  max-width: 380px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--light-gray);
+  color: var(--black);
+  font-size: 14px;
+  font-family: var(--font-text-medium);
+}
+
+@media (max-width: 1199px) {
+  .items {
+    gap: 20px;
+  }
+  .link,
+  .logout_btn_mobile {
+    max-width: 100%;
+  }
 }

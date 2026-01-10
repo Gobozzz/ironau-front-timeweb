@@ -9,3 +9,13 @@
 .slide {
   width: 1004px !important;
 }
+
+@media (max-width: 1199px) {
+  .items {
+    max-width: 100%;
+  }
+  .slide {
+    min-width: 260px;
+    max-width: 260px;
+  }
+}

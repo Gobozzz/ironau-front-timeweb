@@ -29,3 +29,14 @@
   font-family: var(--font-text-medium);
   color: var(--black);
 }
+
+@media (max-width: 1199px) {
+  .question {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+  .button_yes,
+  .button_no {
+    font-size: 12px;
+  }
+}

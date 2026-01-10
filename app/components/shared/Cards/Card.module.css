@@ -144,4 +144,8 @@
   .title {
     font-size: 14px;
   }
+  .delete {
+    width: 44px;
+    height: 44px;
+  }
 }

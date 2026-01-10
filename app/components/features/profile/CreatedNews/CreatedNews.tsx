@@ -130,14 +130,21 @@ export function CreatedNews({ className = "" }: Props) {
         <Swiper
           className="ml-0! mr-0!"
           onReachEnd={handlerSliderScrollEnd}
-          spaceBetween={32}
           slidesPerView={"auto"}
+          breakpoints={{
+            1199: {
+              spaceBetween: 32,
+            },
+            320: {
+              spaceBetween: 12,
+            },
+          }}
         >
           {items.map((item) => (
             <SwiperSlide key={item.id} className={styles.slide}>
               <CreatedNewsCard
                 delete_callback={(id: number) => setDeleteId(id)}
-                className="select-none min-w-[340px]! max-w-[340px]!"
+                className="select-none"
                 data={item}
               />
             </SwiperSlide>

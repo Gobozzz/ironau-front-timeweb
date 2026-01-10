@@ -79,14 +79,21 @@ export function MyQuestions({ className = "" }: Props) {
         <Swiper
           className="ml-0! mr-0!"
           onReachEnd={handlerSliderScrollEnd}
-          spaceBetween={20}
+          breakpoints={{
+            1199: {
+              spaceBetween: 20,
+            },
+            320: {
+              spaceBetween: 12,
+            },
+          }}
           slidesPerView={"auto"}
         >
           {items.map((item) => (
             <SwiperSlide key={item.id} className={styles.slide}>
               <QuestionCard
                 searchedText={debouncedSearch}
-                className="select-none min-w-[1004px]! max-w-[1004px]!"
+                className="select-none"
                 data={item}
               />
             </SwiperSlide>

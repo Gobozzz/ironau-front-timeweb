@@ -132,7 +132,7 @@ export function CreateMenu({
             </button>
             <button
               onClick={() => setIsSelectedMode(true)}
-              className={`${styles.button} ${styles.button_course}`}
+              className={`${styles.button} ${styles.button_course} ${styles.button_course_added}`}
             >
               Объединить уроки в курс
             </button>

@@ -103,7 +103,7 @@ export function CourseRedactor({ className = "", setUpdateCourse }: Props) {
             deleteLesson(deleteIdLesson);
           }
         }}
-        question="Вы уверены что хотите удалить урок?"
+        question="Вы уверены что хотите удалить курс?"
         textYes="Да, удалить"
         disabled={loadingDelete}
       />

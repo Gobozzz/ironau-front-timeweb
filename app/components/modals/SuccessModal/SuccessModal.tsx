@@ -43,13 +43,14 @@ export function SuccessModal({ open, close, title, subtitle = null }: Props) {
           background: "var(--light-gray)",
           borderRadius: "24px",
           padding: "56px 32px",
+          "@media(max-width:1200px)": {
+            padding: "20px 10px",
+          },
         },
       }}
     >
       <div className={styles.title}>{title}</div>
-      {subtitle !== null && (
-        <div className={styles.subtitle}>{subtitle}</div>
-      )}
+      {subtitle !== null && <div className={styles.subtitle}>{subtitle}</div>}
       <button onClick={close} className={styles.button} type="button">
         Понятно, спасибо
       </button>

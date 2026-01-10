@@ -198,3 +198,33 @@
   align-items: center;
   gap: 12px;
 }
+
+@media (max-width: 1199px) {
+  .type {
+    font-size: 14px;
+  }
+  .form_input_title {
+    font-size: 12px;
+  }
+  .wrapper {
+    gap: 16px;
+    padding: 20px 10px;
+  }
+  .tool,
+  .order {
+    min-width: 44px;
+    min-height: 44px;
+  }
+  .form_input {
+    font-size: 12px;
+  }
+  .correct_words_inner {
+    gap: 8px;
+  }
+  .correct_word {
+    font-size: 10px;
+  }
+  .choise {
+    flex-wrap: wrap;
+  }
+}

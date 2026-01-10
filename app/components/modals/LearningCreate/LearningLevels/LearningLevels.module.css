@@ -4,3 +4,9 @@
   gap: 20px;
   flex-wrap: wrap;
 }
+
+@media (max-width: 1199px) {
+  .inner {
+    gap: 12px;
+  }
+}

@@ -11,3 +11,13 @@
   font-family: var(--font-text-medium);
   padding: 0 29px;
 }
+
+@media (max-width: 1199px) {
+  .submit_btn {
+    right: 10px;
+    top: 20px;
+    z-index: 7;
+    min-height: 44px;
+    font-size: 12px;
+  }
+}

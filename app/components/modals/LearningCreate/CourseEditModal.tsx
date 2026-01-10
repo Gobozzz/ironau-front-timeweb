@@ -12,6 +12,7 @@ import Image from "next/image";
 import NoLogo from "@/public/icons/no-logo.svg";
 import { ErrorsInput } from "@components/ui/ErrorsInput/ErrorsInput";
 import { SuccessModal } from "../SuccessModal/SuccessModal";
+import KrestCloseIcon from "@/public/icons/krest-close.svg";
 
 interface Props {
   open: boolean;
@@ -125,6 +126,11 @@ export function CourseEditModal({
       .finally(() => setLoadingUpdate(false));
   }
 
+  function handlerClose() {
+    setErrors({});
+    close();
+  }
+
   return (
     <>
       <SuccessModal
@@ -156,6 +162,10 @@ export function CourseEditModal({
             maxWidth: "1000px",
             background: "var(--light-gray)",
             borderRadius: "24px",
+            "@media(max-width:1200px)": {
+              maxWidth: "calc(100vw - 20px)",
+              margin: "0",
+            },
           },
         }}
       >
@@ -166,7 +176,17 @@ export function CourseEditModal({
         )}
         {!loading && data !== null && (
           <form onSubmit={handlerSubmit} className={styles.form}>
+            <div className="hidden max-[1200px]:block">
+              <button
+                className="min-w-11 min-h-11 flex! items-center justify-center ml-auto"
+                type="button"
+                onClick={handlerClose}
+              >
+                <Image src={KrestCloseIcon} alt="Закрыть" />
+              </button>
+            </div>
             <ErrorsInput errors={errors.message} />
+            <ErrorsInput errors={errors.lessons} />
             <div className={styles.input_item}>
               <div className={styles.input_item_title}>Название курса</div>
               <input

@@ -117,8 +117,8 @@ export function EditExercises({
       )}
       {!loadingExercise && exercises.length === 0 && (
         <div className="flex-auto h-80 flex items-center justify-center">
-          <div className="font-text-medium">
-            Выберите любое упражнение из меню слева
+          <div className="font-text-medium max-[1200px]:text-center">
+            Выберите любое упражнение из меню
           </div>
         </div>
       )}

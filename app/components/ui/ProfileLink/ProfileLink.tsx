@@ -33,7 +33,15 @@ export function ProfileLink({ className = "", callbackClick }: Props) {
 
   if (user) {
     return (
-      <Link href={PROFILE} className={`${styles.item} ${className}`}>
+      <Link
+        onClick={() => {
+          if (callbackClick !== undefined) {
+            callbackClick();
+          }
+        }}
+        href={PROFILE}
+        className={`${styles.item} ${className}`}
+      >
         <Image src={iconLk} alt="Личный кабинет" />
       </Link>
     );

@@ -61,7 +61,11 @@ export default function EmptyCreateModal({
             maxWidth: "700px",
             background: "var(--light-gray)",
             borderRadius: "16px",
-            overflowY: "hidden",
+            overflowY: "auto",
+            "@media(max-width:1200px)": {
+              maxWidth: "calc(100vw - 20px)",
+              margin:"0"
+            },
           },
         }}
       >

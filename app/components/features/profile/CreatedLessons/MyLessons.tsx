@@ -87,7 +87,14 @@ export function MyLessons({ className = "" }: Props) {
         <Swiper
           className="ml-0! mr-0!"
           onReachEnd={handlerSliderScrollEnd}
-          spaceBetween={20}
+          breakpoints={{
+            1199: {
+              spaceBetween: 20,
+            },
+            320: {
+              spaceBetween: 12,
+            },
+          }}
           slidesPerView={"auto"}
         >
           {items.map((item) => (

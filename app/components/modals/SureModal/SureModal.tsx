@@ -54,6 +54,9 @@ export function SureModal({
           background: "var(--white)",
           borderRadius: "12px",
           padding: "32px 44px",
+          "@media(max-width: 1200px)": {
+            padding: "20px 10px",
+          },
         },
       }}
       className="select-none"

@@ -15,3 +15,10 @@
   margin-bottom: 16px;
   user-select: none;
 }
+
+@media (max-width: 1199px) {
+  .items {
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+    gap: 20px;
+  }
+}

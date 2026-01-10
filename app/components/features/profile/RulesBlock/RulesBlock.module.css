@@ -19,3 +19,15 @@
   justify-content: center;
   word-break: break-word;
 }
+
+@media (max-width: 1199px) {
+  .inner {
+    flex-direction: column;
+    gap: 20px;
+    align-items: stretch;
+  }
+  .rule {
+    min-width: 1px;
+    max-width: 100%;
+  }
+}

@@ -54,6 +54,7 @@
   font-family: var(--font-text-medium);
   color: var(--black);
   user-select: none;
+  word-break: break-word;
 }
 
 .tool {
@@ -65,4 +66,10 @@
   align-items: center;
   justify-content: center;
   user-select: none;
+}
+
+@media (max-width: 1199px) {
+  .items {
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  }
 }

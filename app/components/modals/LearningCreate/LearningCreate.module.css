@@ -1,6 +1,5 @@
 .form {
   width: 100%;
-
   display: flex;
   flex-direction: column;
   row-gap: 32px;
@@ -61,4 +60,29 @@
   border-radius: 12px;
   color: var(--white);
   max-width: max-content;
+}
+
+@media (max-width: 1199px) {
+  .form {
+    padding: 12px 10px;
+    row-gap: 20px;
+  }
+  .input_item {
+    gap: 12px;
+  }
+  .input_item_title {
+    font-size: 12px;
+  }
+  .input_item_input {
+    font-size: 12px;
+  }
+  .input_item_textarea {
+    font-size: 12px;
+  }
+  .btn_submit {
+    font-size: 12px;
+    min-height: 44px;
+    width: 100%;
+    max-width: 100%;
+  }
 }

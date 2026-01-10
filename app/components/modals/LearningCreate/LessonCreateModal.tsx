@@ -15,6 +15,7 @@ import { ErrorsInput } from "@components/ui/ErrorsInput/ErrorsInput";
 import { SuccessModal } from "../SuccessModal/SuccessModal";
 import { useRouter } from "next/navigation";
 import { LESSON_EDIT } from "@/app/navigate";
+import KrestCloseIcon from "@/public/icons/krest-close.svg";
 
 interface Props {
   open: boolean;
@@ -30,10 +31,7 @@ const Transition = React.forwardRef(function Transition(
   return <Slide direction="up" ref={ref} {...props} />;
 });
 
-export function LessonCreateModal({
-  open,
-  close,
-}: Props) {
+export function LessonCreateModal({ open, close }: Props) {
   const router = useRouter();
   const [loadingUploadImage, setLoadingUploadImage] = useState<boolean>(false);
   const [loadingUpdate, setLoadingUpdate] = useState<boolean>(false);
@@ -110,6 +108,11 @@ export function LessonCreateModal({
       .finally(() => setLoadingUpdate(false));
   }
 
+  function handlerClose() {
+    setErrors({});
+    close();
+  }
+
   return (
     <>
       <SuccessModal
@@ -141,10 +144,23 @@ export function LessonCreateModal({
             maxWidth: "1000px",
             background: "var(--light-gray)",
             borderRadius: "24px",
+            "@media(max-width:1200px)": {
+              maxWidth: "calc(100vw - 20px)",
+              margin: "0",
+            },
           },
         }}
       >
         <form onSubmit={handlerSubmit} className={styles.form}>
+          <div className="hidden max-[1200px]:block">
+            <button
+              className="min-w-11 min-h-11 flex! items-center justify-center ml-auto"
+              type="button"
+              onClick={handlerClose}
+            >
+              <Image src={KrestCloseIcon} alt="Закрыть" />
+            </button>
+          </div>
           <ErrorsInput errors={errors.message} />
           <div className={styles.input_item}>
             <div className={styles.input_item_title}>Название урока</div>

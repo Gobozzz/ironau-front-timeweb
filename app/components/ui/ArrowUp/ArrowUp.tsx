@@ -7,7 +7,9 @@ import { usePathname } from "next/navigation";
 export function ArrowUp() {
   const [isVisible, setIsVisible] = useState(false);
   const timeoutRef = useRef<NodeJS.Timeout>(null);
-  const pathname = usePathname()
+  const pathname = usePathname();
+
+  const paths_up_position = ["/"];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -48,12 +50,22 @@ export function ArrowUp() {
 
   return (
     <button
-      className={`${styles.arrow} ${styles.arrowVisible} ${pathname === "/" && window.innerWidth <= 799 ? styles.mobile : ''}`}
+      className={`${styles.arrow} ${styles.arrowVisible} ${
+        paths_up_position.includes(pathname) && window.innerWidth <= 799 ? styles.mobile : ""
+      }`}
       onClick={scrollToTop}
       aria-label="Прокрутить наверх"
     >
-      <img className={styles.arrow_white} src="/icons/arrow-up.svg" alt="Стрелочка наверх" />
-      <img className={styles.arrow_black} src="/icons/arrow-up-black.svg" alt="Стрелочка наверх" />
+      <img
+        className={styles.arrow_white}
+        src="/icons/arrow-up.svg"
+        alt="Стрелочка наверх"
+      />
+      <img
+        className={styles.arrow_black}
+        src="/icons/arrow-up-black.svg"
+        alt="Стрелочка наверх"
+      />
     </button>
   );
 }

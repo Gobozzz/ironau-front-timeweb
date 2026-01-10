@@ -22,12 +22,14 @@ export default function Profile() {
   return (
     <AuthLayout>
       <IndexLayout>
-        <LogoutButton />
+        <div className="max-[1200px]:hidden">
+          <LogoutButton />
+        </div>
         <div>
           <PageTitle>Личный кабинет</PageTitle>
           <div className="">
-            <PersonalData className="mb-16" />
-            <RulesBlock className="mb-16" />
+            <PersonalData className="mb-16 max-[1200px]:mb-10" />
+            <RulesBlock className="mb-16 max-[1200px]:mb-10" />
             <CreatedCoursesWrapper />
             <CreatedLessonsWrapper />
             <CreatedNewsWrapper />
