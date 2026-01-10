@@ -115,7 +115,7 @@ export function CreateForm({}: Props) {
                 </button>
               )}
               {successCreate && (
-                <div className="text-sm">
+                <div className="text-sm max-[1200px]:text-center">
                   Вопрос был отправлен в справочное бюро. Ожидайте ответа.
                 </div>
               )}

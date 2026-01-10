@@ -44,7 +44,7 @@
   color: var(--black);
   line-height: 1.3;
   margin-bottom: 12px;
-    word-break: break-word;
+  word-break: break-word;
 }
 .button_more {
   background: var(--white);
@@ -66,4 +66,33 @@
   line-height: 1;
   font-family: var(--font-navigation);
   user-select: none;
+}
+
+@media (max-width: 1199px) {
+  .title {
+    font-size: clamp(0.75rem, 0.568rem + 0.91vw, 1.25rem);
+    margin-bottom: 20px;
+  }
+  .card {
+    padding: clamp(0.625rem, 0.307rem + 1.59vw, 1.5rem)
+      clamp(0.625rem, 0.125rem + 2.5vw, 2rem);
+  }
+
+  .card_tags {
+    margin-bottom: 8px;
+  }
+
+  .expert {
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+
+  .answer {
+    font-size: clamp(0.75rem, 0.659rem + 0.45vw, 1rem);
+  }
+
+  .button_more,
+  .date {
+    font-size: 10px;
+  }
 }

@@ -13,7 +13,7 @@ export default function ShortLayout({ children }: PropsWithChildren<unknown>) {
       <Container>
         <div className="min-h-screen flex flex-col justify-between flex-auto">
           <div>
-            <div className="mb-8">
+            <div className="mb-8 max-[1200px]:hidden">
               <ProfileNavigate />
             </div>
             <main>{children}</main>

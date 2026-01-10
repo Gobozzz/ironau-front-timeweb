@@ -217,5 +217,127 @@
   background: var(--color-foreground);
   color: var(--color-background);
   max-width: 354px;
-  border-radius: 14px;
+  border-radius: 12px;
+  font-size: 14px;
+}
+
+.desctop_search {
+  display: block;
+}
+
+.mobile_search {
+  display: none;
+}
+
+@media (max-width: 1199px) {
+  .mobile_search {
+    display: block;
+  }
+  .desctop_search {
+    display: none;
+  }
+  .search {
+    height: 44px;
+    margin-bottom: 20px;
+  }
+  .search_button {
+    min-width: 44px;
+    background: var(--black);
+  }
+  .search_input {
+    font-size: 12px;
+  }
+  .tab {
+    font-size: 10px;
+  }
+  .tabs {
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+  .subtitle {
+    font-size: 10px;
+    margin-bottom: 20px;
+  }
+  .questions_inner {
+    flex-direction: column-reverse;
+    gap: 24px;
+  }
+  .questions_info {
+    position: static;
+    top: 0;
+    flex-direction: row;
+    width: 100%;
+    gap: 4px;
+  }
+  .count_questions,
+  .no_search {
+    flex: 1;
+    padding: 12px 14px;
+  }
+
+  .count_questions {
+    justify-content: space-between;
+  }
+
+  .no_search {
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .no_search img {
+    display: none;
+  }
+
+  .count_questios_number {
+    font-size: clamp(5rem, 3.545rem + 7.27vw, 9rem);
+  }
+
+  .count_questios_subtitle {
+    font-size: clamp(0.75rem, 0.659rem + 0.45vw, 1rem);
+  }
+
+  .no_search_title {
+    font-size: clamp(2.125rem, 0.716rem + 7.05vw, 6rem);
+  }
+
+  .no_search_button {
+    font-size: clamp(0.688rem, 0.574rem + 0.57vw, 1rem);
+  }
+
+  .count_questions_image {
+    width: 36px;
+  }
+
+  .questions_items {
+    gap: 24px;
+    width: 100%;
+  }
+
+  .form {
+    flex-direction: column-reverse;
+    gap: 20px;
+  }
+
+  .form > * {
+    width: 100%;
+    max-width: 100%;
+  }
+  .create_right {
+    min-width: 1px;
+  }
+  .form_textarea {
+    padding: 16px 12px;
+    font-size: 12px;
+  }
+  .form_down {
+    flex-direction: column;
+    align-items: start;
+  }
+  .form_down > * {
+    width: 100%;
+    max-width: 100%;
+  }
+  .form_inner {
+    gap: 20px;
+  }
 }

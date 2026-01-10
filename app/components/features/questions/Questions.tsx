@@ -8,9 +8,10 @@ import styles from "./Questions.module.css";
 import api from "@/app/api";
 import { Paginate } from "../../shared/Paginate/Paginate";
 import CustomSkeleton from "../../ui/CustomSkeleton/CustomSkeleton";
-import { PageTitle } from "../../ui/PageTitle/PageTitle";
 import { Loader } from "../../ui/Loader/Loader";
 import { CreateForm } from "./CreateForm";
+import Image from "next/image";
+import SearchIcon from "@/public/icons/search-white.svg";
 
 interface Props {}
 
@@ -96,7 +97,16 @@ export function Questions({}: Props) {
           type="button"
           className={styles.search_button}
         >
-          {loading ? <Loader size="sm" /> : "Найти ответ"}
+          <span className={`text-inherit! ${styles.desctop_search}`}>
+            {loading ? <Loader size="sm" /> : "Найти ответ"}
+          </span>
+          <span className={`text-inherit! ${styles.mobile_search}`}>
+            {loading ? (
+              <Loader size="sm" />
+            ) : (
+              <Image src={SearchIcon} alt="Поиск" />
+            )}
+          </span>
         </button>
       </div>
       <div className={styles.tabs}>
@@ -164,7 +174,7 @@ export function Questions({}: Props) {
               {!loading &&
                 questions.length === 0 &&
                 filters.title.trim().length > 0 && (
-                  <div className="text-sm text-center">
+                  <div className="text-sm text-center max-[1200px]:py-11 max-[1200px]:text-center">
                     Ничего не нашлось по запросу "{filters.title}"
                   </div>
                 )}

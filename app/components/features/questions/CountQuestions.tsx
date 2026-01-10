@@ -39,7 +39,7 @@ function getCurrentDateFormatted(): string {
 export function CountQuestions({ count, loading }: Props) {
   return (
     <div className={styles.count_questions}>
-      <Image src={CountIcon} alt="Количество вопросов" />
+      <Image className={styles.count_questions_image} src={CountIcon} alt="Количество вопросов" />
       <div className={styles.count_questios_number}>
         {loading && <Loader size="base" />}
         {!loading && count !== null && count}
