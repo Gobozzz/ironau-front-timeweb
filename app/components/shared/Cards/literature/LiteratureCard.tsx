@@ -42,7 +42,12 @@ export function LiteratureCard({ data, className = "" }: Props) {
         </Link>
       </div>
       <div className={styles.card_down}>
-        <h2 className={`${styles.title} line-clamp-2`}>{data.title}</h2>
+        <Link
+          className="select-all!"
+          href={LITERATURE_SHOW(data.slug, data.id)}
+        >
+          <h2 className={`${styles.title} line-clamp-2`}>{data.title}</h2>
+        </Link>
         <div className={styles.year}>
           {data.year ? `${data.year} год` : "Год неизвестен"}
         </div>

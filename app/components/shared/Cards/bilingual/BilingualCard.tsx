@@ -39,7 +39,9 @@ export function BilingualCard({ data, className = "" }: Props) {
         </Link>
       </div>
       <div className={styles.card_down}>
-        <h2 className={`${styles.title} line-clamp-2`}>{data.title}</h2>
+        <Link className="select-all!" href={BILINGUAL_SHOW(data.slug, data.id)}>
+          <h2 className={`${styles.title} line-clamp-2`}>{data.title}</h2>
+        </Link>
         <div className={styles.card_down_item}>
           <div className={styles.card_down_item_title}>Автор</div>
           <div className={styles.card_down_item_value}>{data.author}</div>

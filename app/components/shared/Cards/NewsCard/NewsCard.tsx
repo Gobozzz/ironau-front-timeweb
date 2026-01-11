@@ -25,7 +25,7 @@ export function NewsCard({ className = "", data }: Props) {
           </div>
         ))}
       </div>
-      <Link href={NEWS_SHOW(data.slug, data.id)}>
+      <Link className="select-all!" href={NEWS_SHOW(data.slug, data.id)}>
         <h2 className={`${styles.title} line-clamp-2`}>{data.title}</h2>
       </Link>
       <p className={`${styles.text} line-clamp-6`}>{data.description}</p>

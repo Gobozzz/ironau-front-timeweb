@@ -52,7 +52,9 @@ export function CourseCard({ className = "", data }: Props) {
         <div className={styles.up_up}>
           <div className={styles.up_left}>
             <LevelLesson level={data.level.title} className="mb-5" />
-            <h2 className={`${styles.title} line-clamp-2`}>{data.title}</h2>
+            <Link className="select-all!" href={COURSE_SHOW(data.slug, data.id)}>
+              <h2 className={`${styles.title} line-clamp-2`}>{data.title}</h2>
+            </Link>
           </div>
           <div className={styles.up_right}>
             <Link href={COURSE_SHOW(data.slug, data.id)}>
