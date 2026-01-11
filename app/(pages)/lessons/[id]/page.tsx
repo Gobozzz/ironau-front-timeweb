@@ -33,8 +33,7 @@ export async function generateMetadata({
   }
 
   const imageOG = {
-    url:
-      lesson.image || `${SITE_URL}/images/og-image.jpg`,
+    url: lesson.image || `${SITE_URL}/images/og-image.jpg`,
     width: 1200,
     height: 630,
     alt: `${lesson.title} - Осетинский язык онлайн`,
@@ -88,8 +87,8 @@ export default async function Page({
   return (
     <IndexLayout>
       <PageTitle>{lesson.title}</PageTitle>
-      <div className="flex items-start gap-13">
-        <div className="min-w-95 max-w-95">
+      <div className="flex items-start gap-13 max-[1200px]:flex-col max-[1200px]:gap-6">
+        <div className="min-w-95 max-w-95 max-[1200px]:min-w-1">
           <Image
             className="w-full aspect-square rounded-2xl mb-6 object-center object-cover"
             src={lesson.image || noLogo}
@@ -119,13 +118,13 @@ export default async function Page({
           </div>
           <LessonStartLearnButton id={lesson.id} />
           <div>
-            <div className="text-base text-gray! font-navigation mb-2 italic select-none">
+            <div className="text-base text-gray! font-navigation mb-2 italic select-none max-[1200px]:text-sm">
               Автор урока
             </div>
-            <div className="text-xl font-navigation">{lesson.author.name}</div>
+            <div className="text-xl font-navigation max-[1200px]:text-sm">{lesson.author.name}</div>
           </div>
         </div>
-        <p className="max-w-200 text-base whitespace-pre-wrap">
+        <p className="max-w-200 text-base whitespace-pre-wrap max-[1200px]:max-w-full">
           {lesson.content}
         </p>
       </div>
