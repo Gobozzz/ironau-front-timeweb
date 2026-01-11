@@ -77,7 +77,9 @@ export default async function Page({
 
   return (
     <IndexLayout>
-      <ArrowBack url={NEWS} />
+      <div className="max-[1200px]:hidden">
+        <ArrowBack url={NEWS} />
+      </div>
       <PageTitle>{news.title}</PageTitle>
       <div className="flex flex-col gap-4 mb-6">
         <div className="text-base font-navigation leading-none text-gray!">
