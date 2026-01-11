@@ -8,6 +8,7 @@ import ShortLayout from "@/app/components/layout/ShortLayout";
 import { ShowTranslationsDesctop } from "@/app/components/features/bilinguals/ShowTranslations/ShowTranslationsDesctop";
 import { ArrowBack } from "@/app/components/ui/ArrowBack/ArrowBack";
 import { SITE_NAME, SITE_URL } from "@/app/constants";
+import { ShowTranslations } from "@/app/components/features/bilinguals/ShowTranslations/ShowTranslations";
 
 export async function generateMetadata({
   params,
@@ -79,9 +80,11 @@ export default async function Page({
 
   return (
     <ShortLayout>
-      <ArrowBack url={BILINGUALS} />
+      <div className="max-[1200px]:hidden">
+        <ArrowBack url={BILINGUALS} />
+      </div>
       <PageTitle>{bilingual.title}</PageTitle>
-      <ShowTranslationsDesctop bilingual={bilingual} />
+      <ShowTranslations bilingual={bilingual} />
     </ShortLayout>
   );
 }

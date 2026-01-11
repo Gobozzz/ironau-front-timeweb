@@ -76,6 +76,7 @@
 
 .translation_title {
   font-size: 24px;
+  line-height: 1.2;
   text-align: center;
   margin-bottom: 40px;
 }
@@ -125,4 +126,48 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
+}
+
+@media (max-width: 1199px) {
+  .main_inner {
+    flex-direction: column;
+    gap: 32px;
+  }
+  .line_inner {
+    display: none;
+  }
+  .inner_part {
+    flex: none;
+    background: var(--light-gray);
+    padding: 20px 10px;
+    border-radius: 24px;
+  }
+  .translation_parts {
+    min-height: 300px;
+    height: 50vh;
+    overflow-y: auto;
+    flex: none;
+  }
+  .translation_part {
+    background: var(--white);
+    padding: 10px;
+    border-radius: 12px;
+  }
+  .choise_items {
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+  .choise_title {
+    display: none;
+  }
+  .choise_item {
+    font-size: 24px;
+  }
+  .author_block {
+    display: none;
+  }
+  .translation_title {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
 }

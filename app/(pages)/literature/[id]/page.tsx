@@ -31,9 +31,7 @@ export async function generateMetadata({
   }
 
   const imageOG = {
-    url:
-      literature.image ||
-      `${SITE_URL}/images/og-image.jpg`,
+    url: literature.image || `${SITE_URL}/images/og-image.jpg`,
     width: 1200,
     height: 630,
     alt: `${literature.title} - Осетинский язык онлайн`,
@@ -83,10 +81,12 @@ export default async function Page({
 
   return (
     <ShortLayout>
-      <ArrowBack url={LITERATURE} />
-      <div className="flex items-start gap-10 mb-10">
+      <div className="max-[1200px]:hidden">
+        <ArrowBack url={LITERATURE} />
+      </div>
+      <div className="flex items-start gap-10 mb-10 max-[1200px]:flex-col max-[1200px]:gap-5">
         <Image
-          className="w-[580px] h-[680px] object-cover object-center rounded-xl"
+          className="block w-full max-w-[580px] rounded-xl"
           loading="eager"
           width={580}
           height={680}
@@ -95,14 +95,14 @@ export default async function Page({
         />
         <div>
           <PageTitle>{literature.title}</PageTitle>
-          <div className="text-base font-navigation mb-6 italic">
+          <div className="text-base font-navigation mb-6 italic max-[1200px]:mb-3">
             {literature.year ? `${literature.year} год` : "Год неизвестен"}
           </div>
-          <div className="text-sm font-navigation mb-6 italic">
+          <div className="text-sm font-navigation mb-6 italic max-[1200px]:mb-3">
             {literature.author || "Автор неизвестен"}
           </div>
           {literature.tags.length > 0 && (
-            <div className="mb-10 flex items-start gap-2 flex-wrap">
+            <div className="mb-10 flex items-start gap-2 flex-wrap max-[1200px]:mb-3">
               {literature.tags.map((tag) => (
                 <div
                   className="bg-gray-light px-3 min-h-6 text-black! text-[10px] wrap-break-word rounded-sm flex items-center justify-center"
