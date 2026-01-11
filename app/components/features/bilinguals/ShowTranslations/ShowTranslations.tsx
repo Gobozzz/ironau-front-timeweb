@@ -21,34 +21,40 @@ export function ShowTranslations({ bilingual }: Props) {
   );
 
   return (
-    <div className={styles.main_inner}>
-      <div className={styles.inner_part}>
-        <ChoiseTranslation
-          activeTranslation={leftTranslation}
-          changeActiveTranslation={setLeftTranslation}
-          translations={bilingual.translations}
-        />
-        <div className={styles.author_block}>
-          <div className={styles.author_block_title}>Автор</div>
-          <div className={styles.author_block_value}>{bilingual.author}</div>
-        </div>
-        <Translation translation={bilingual.translations[leftTranslation]} />
+    <>
+      <div className="text-[10px] text-center mb-4">
+        Нумерация текста не относится к самому произведению, служит
+        исключительно для удобного сопоставления частей из разных переводов
       </div>
-      <div className={styles.line_inner}></div>
-      <div className={styles.inner_part}>
-        <ChoiseTranslation
-          activeTranslation={rightTranslation}
-          changeActiveTranslation={setRightTranslation}
-          translations={bilingual.translations}
-        />
-        <div className={styles.author_block}>
-          <div className={styles.author_block_title}>Перевели</div>
-          <div className={styles.author_block_value}>
-            {bilingual.translator}
+      <div className={styles.main_inner}>
+        <div className={styles.inner_part}>
+          <ChoiseTranslation
+            activeTranslation={leftTranslation}
+            changeActiveTranslation={setLeftTranslation}
+            translations={bilingual.translations}
+          />
+          <div className={styles.author_block}>
+            <div className={styles.author_block_title}>Автор</div>
+            <div className={styles.author_block_value}>{bilingual.author}</div>
           </div>
+          <Translation translation={bilingual.translations[leftTranslation]} />
         </div>
-        <Translation translation={bilingual.translations[rightTranslation]} />
+        <div className={styles.line_inner}></div>
+        <div className={styles.inner_part}>
+          <ChoiseTranslation
+            activeTranslation={rightTranslation}
+            changeActiveTranslation={setRightTranslation}
+            translations={bilingual.translations}
+          />
+          <div className={styles.author_block}>
+            <div className={styles.author_block_title}>Перевели</div>
+            <div className={styles.author_block_value}>
+              {bilingual.translator}
+            </div>
+          </div>
+          <Translation translation={bilingual.translations[rightTranslation]} />
+        </div>
       </div>
-    </div>
+    </>
   );
 }

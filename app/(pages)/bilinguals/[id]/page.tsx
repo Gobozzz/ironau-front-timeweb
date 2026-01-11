@@ -5,10 +5,9 @@ import { PageTitle } from "@components/ui/PageTitle/PageTitle";
 import { BILINGUAL_SHOW, BILINGUALS } from "@navigate";
 import { getRealId } from "@helpers/links";
 import ShortLayout from "@/app/components/layout/ShortLayout";
-import { ShowTranslationsDesctop } from "@/app/components/features/bilinguals/ShowTranslations/ShowTranslationsDesctop";
 import { ArrowBack } from "@/app/components/ui/ArrowBack/ArrowBack";
 import { SITE_NAME, SITE_URL } from "@/app/constants";
-import { ShowTranslations } from "@/app/components/features/bilinguals/ShowTranslations/ShowTranslations";
+import { ShowTranslationsWrapper } from "@/app/components/features/bilinguals/ShowTranslations/ShowTranslationsWrapper";
 
 export async function generateMetadata({
   params,
@@ -28,9 +27,7 @@ export async function generateMetadata({
   }
 
   const imageOG = {
-    url:
-      bilingual.image ||
-      `${SITE_URL}/images/og-image.jpg`,
+    url: bilingual.image || `${SITE_URL}/images/og-image.jpg`,
     width: 1200,
     height: 630,
     alt: `${bilingual.title} - Осетинский язык онлайн`,
@@ -84,7 +81,7 @@ export default async function Page({
         <ArrowBack url={BILINGUALS} />
       </div>
       <PageTitle>{bilingual.title}</PageTitle>
-      <ShowTranslations bilingual={bilingual} />
+      <ShowTranslationsWrapper bilingual={bilingual} />
     </ShortLayout>
   );
 }

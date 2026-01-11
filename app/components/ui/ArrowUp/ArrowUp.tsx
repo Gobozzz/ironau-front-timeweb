@@ -4,12 +4,21 @@ import { useEffect, useState, useRef } from "react";
 import styles from "./ArrowUp.module.css";
 import { usePathname } from "next/navigation";
 
+const pathsUpPattern = [
+  /^\/$/,
+  /^\/bilinguals\/create$/,
+  /^\/courses\/[^\/]+\/flow$/,
+  /^\/lessons\/[^\/]+\/flow$/,
+];
+
+const isMatchPath = (pathname: string) => {
+  return pathsUpPattern.some((pattern) => pattern.test(pathname));
+};
+
 export function ArrowUp() {
   const [isVisible, setIsVisible] = useState(false);
   const timeoutRef = useRef<NodeJS.Timeout>(null);
   const pathname = usePathname();
-
-  const paths_up_position = ["/"];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -48,10 +57,12 @@ export function ArrowUp() {
 
   if (!isVisible) return null;
 
+  const showMobileClass = isMatchPath(pathname) && window.innerWidth <= 799;
+
   return (
     <button
       className={`${styles.arrow} ${styles.arrowVisible} ${
-        paths_up_position.includes(pathname) && window.innerWidth <= 799 ? styles.mobile : ""
+        showMobileClass ? styles.mobile : ""
       }`}
       onClick={scrollToTop}
       aria-label="Прокрутить наверх"
