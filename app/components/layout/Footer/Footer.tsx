@@ -43,8 +43,8 @@ export function Footer({ className }: Props) {
             <Link href={LITERATURE} aria-label="Литература">
               Литература
             </Link>
-            <Link href={SPRAVOCHNIK} aria-label="Справочник">
-              Справочник
+            <Link href={SPRAVOCHNIK} aria-label="Вопрос — ответ">
+              Вопрос — ответ
             </Link>
           </div>
           <div className={styles.links}>

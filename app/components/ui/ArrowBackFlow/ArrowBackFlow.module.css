@@ -13,3 +13,11 @@
   cursor: pointer;
   user-select: none;
 }
+
+@media (max-width: 1199px) {
+  .arrow {
+    left: 10px;
+    top: 20px;
+    right: auto;
+  }
+}

@@ -25,3 +25,24 @@
   align-items: center;
   gap: 16px;
 }
+
+@media (max-width: 1199px) {
+  .stars {
+    gap: 8px;
+  }
+  .star {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .star svg {
+    width: 32px;
+    height: 32px;
+  }
+  .button_submit {
+    min-height: 44px;
+    font-size: 14px;
+  }
+}

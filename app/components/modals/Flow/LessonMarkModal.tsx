@@ -91,6 +91,10 @@ export function LessonMarkModal({
           height: "680px",
           background: "var(--white)",
           borderRadius: "24px",
+          "@media(max-width:1200px)": {
+            maxWidth: "90%",
+            margin: "0",
+          },
         },
       }}
     >

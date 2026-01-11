@@ -20,22 +20,22 @@ interface Props {
 export function FooterFlow({ className }: Props) {
   return (
     <footer className={`${styles.footer} ${styles.footer_flow} ${className}`}>
-      <div className="flex items-start gap-25">
-        <div>
+      <div className="flex items-start gap-25 max-[1500px]:flex-col-reverse max-[1500px]:items-center max-[800px]:gap-15">
+        <div className="flex flex-col gap-4 max-[1400px]:flex-col-reverse max-[1400px]:gap-13">
           <h2 className={styles.title}>иронау.ру</h2>
-          <div className="flex justify-between items-end">
-            <div className="font-navigation! text-base select-none">
-              2001 — 2025
+          <div className="flex flex-col-reverse gap-4 max-[1400px]:items-center max-[1400px]:gap-11">
+            <div className="font-navigation! text-base select-none max-[800px]:text-sm">
+              2001 — {new Date().getFullYear()}
             </div>
-            <div>
-              <div className="text-gray text-base select-none">
+            <div className="max-[1400px]:flex max-[1400px]:flex-col max-[1400px]:items-center max-[1400px]:gap-4">
+              <div className="text-gray text-base select-none max-[800px]:text-center max-[800px]:text-sm">
                 Главный редактор
               </div>
-              <div className="text-base underline select-none">В. Иванов</div>
+              <div className="text-base underline select-none max-[800px]:text-center max-[800px]:text-sm">В. Иванов</div>
             </div>
           </div>
         </div>
-        <div className="flex items-start gap-30">
+        <div className="flex items-start gap-30 max-[1200px]:flex-col-reverse max-[1200px]:items-center max-[1200px]:gap-15">
           <div className={styles.links}>
             <Link href={CENTER_LEARNING} aria-label="Центр обучения">
               Центр обучения

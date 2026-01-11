@@ -53,7 +53,10 @@ export function NavigateExcerciseCourse({
           type="button"
           className={styles.navigate_exercises_item}
         >
-          Предыдущее упражнение
+          Предыдущее{" "}
+          {typeof window !== "undefined" &&
+            window.innerWidth >= 1200 &&
+            "упражнение"}
         </button>
       )}
       {next_id && (
@@ -62,7 +65,10 @@ export function NavigateExcerciseCourse({
           type="button"
           className={styles.navigate_exercises_item}
         >
-          Следующее упражнение
+          Следующее{" "}
+          {typeof window !== "undefined" &&
+            window.innerWidth >= 1200 &&
+            "упражнение"}
         </button>
       )}
       {next_id === null && next_lesson_first_exercise_id !== null && (

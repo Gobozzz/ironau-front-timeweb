@@ -229,3 +229,114 @@
   margin-bottom: 32px;
   border-radius: 12px;
 }
+
+.close_sidebar {
+  display: none;
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 19;
+  background: black;
+  opacity: 0.5;
+}
+
+.close_sidebar.active {
+  display: block;
+}
+
+.show_sidebar_btn {
+  position: fixed;
+  bottom: 12px;
+  left: 10px;
+  right: 10px;
+  width: auto;
+  height: 44px;
+  font-size: 14px;
+  color: var(--black);
+  z-index: 5;
+}
+
+@media (max-width: 1199px) {
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 20;
+    bottom: 0;
+    min-width: 296px;
+    max-width: 296px;
+    padding: 12px 10px;
+    transform: translateX(-110%);
+    transition: transform 300ms;
+  }
+  .sidebar.active {
+    transform: translateX(0);
+  }
+  .sidebar_item_exercises {
+    padding: 0;
+  }
+  .roadmap_exercises {
+    display: none;
+  }
+  .flow_work_place {
+    padding: 88px 10px 0px;
+  }
+
+  .navigate_exercises_items {
+    position: fixed;
+    z-index: 5;
+    top: 20px;
+    right: 10px;
+    gap: 4px;
+    width: calc(100vw - 84px);
+  }
+
+  .navigate_exercises_item {
+    height: 44px;
+    font-size: 12px;
+    background: var(--blue);
+    color: var(--white);
+    flex: 1;
+    padding: 0;
+    min-width: 110px;
+  }
+  .navigate_exercises_item:first-child {
+    background: var(--light-gray);
+    color: var(--black);
+  }
+
+  .exercise_flow_description {
+    font-size: 14px;
+  }
+
+  .text_exercise_input {
+    margin-bottom: 20px;
+  }
+
+  .submit_button_exercise {
+    min-width: 1px;
+    width: 100%;
+    max-width: 100%;
+    font-size: 14px;
+    min-height: 44px;
+  }
+
+  .exercise_answer_variant_item_title {
+    font-size: 14px;
+  }
+
+  .exercise_path_words_path_text {
+    font-size: 14px;
+  }
+
+  .sidebar_mark_button {
+    margin-bottom: 20px;
+    max-width: 100%;
+    width: 100%;
+    min-height: 44px;
+    font-size: 12px;
+  }
+
+}
