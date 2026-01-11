@@ -117,7 +117,7 @@ export default async function Page({
             <Link
               target="_blank"
               href={literature.link_url}
-              className="flex items-center justify-center gap-2 w-full max-w-[300px] h-9 rounded-xl bg-gray-light text-[12px] text-black! font-text-medium!"
+              className="flex items-center justify-center gap-2 w-full max-w-[300px] h-9 rounded-xl bg-gray-light text-[12px] text-black! font-text-medium! max-[1200px]:max-w-full"
             >
               <Image src={FileIcon} alt="Файл" />
               Скачать файл
