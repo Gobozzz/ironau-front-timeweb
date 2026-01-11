@@ -26,7 +26,8 @@
 
 @font-face {
   font-family: "Helvetica";
-  src: url("/fonts/Helvetica/Helvetica.woff") format("woff");
+  src: url("/fonts/Helvetica/Helvetica.woff2") format("woff2"),
+    url("/fonts/Helvetica/Helvetica.woff") format("woff");
 }
 
 :root {
