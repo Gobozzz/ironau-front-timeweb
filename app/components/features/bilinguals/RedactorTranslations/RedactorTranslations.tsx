@@ -269,6 +269,14 @@ export function RedactorTranslations({ id }: Props) {
         title="Билингва отправлена на модерацию"
       />
       <MegaTitle>{bilingual.title}</MegaTitle>
+      <button
+        disabled={loadingUpdate}
+        onClick={handleUpdateTranslations}
+        type="button"
+        className={styles.button_send}
+      >
+        {loadingUpdate ? <Loader size="sm" /> : "Сохранить"}
+      </button>
       {!loadingRefreshTranslations && (
         <MenuLanguages
           languages={languages}
@@ -307,14 +315,6 @@ export function RedactorTranslations({ id }: Props) {
         className={styles.button_add_part}
       >
         <Image src={PlusIcon} alt="" />
-      </button>
-      <button
-        disabled={loadingUpdate}
-        onClick={handleUpdateTranslations}
-        type="button"
-        className={styles.button_send}
-      >
-        {loadingUpdate ? <Loader size="sm" /> : "Сохранить"}
       </button>
     </div>
   );

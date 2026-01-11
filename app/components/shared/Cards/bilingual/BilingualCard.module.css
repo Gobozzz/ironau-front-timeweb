@@ -125,3 +125,10 @@
   background: var(--light-gray);
   margin-left: auto;
 }
+
+@media (max-width: 1199px) {
+  .card_trash {
+    width: 44px;
+    height: 44px;
+  }
+}

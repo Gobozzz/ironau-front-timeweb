@@ -64,3 +64,21 @@
   min-width: 240px;
   min-height: 64px;
 }
+
+
+@media(max-width:1199px) {
+  .button_submit {
+    position: fixed;
+    top: auto;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    width: auto;
+    min-height: 44px;
+    z-index: 6;
+  }
+  .categories_button {
+    max-width: 800px;
+    font-size: 12px;
+  }
+}

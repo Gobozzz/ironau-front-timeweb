@@ -168,3 +168,63 @@
   align-items: center;
   justify-content: center;
 }
+
+@media (max-width: 1199px) {
+  .menu {
+    margin: 0 auto 32px;
+    padding: 10px;
+  }
+  .menu_up {
+    flex-direction: column;
+    width: 100%;
+  }
+  .menu_language_choise,
+  .menu_language_active,
+  .menu_languages_variants button {
+    width: 100%;
+  }
+
+  .translations {
+    flex-direction: column;
+  }
+
+  .translations_line {
+    width: 100%;
+    min-height: 2px;
+    max-height: 2px;
+  }
+
+  .translation_part {
+    padding-bottom: 0px;
+    border: none;
+  }
+
+  .translation_parts {
+    min-height: 300px;
+    max-height: 50vh;
+    overflow-y: auto;
+  }
+
+  .translation_name {
+    font-size: 12px;
+    height: 44px;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .button_add_part {
+    bottom: 10px;
+    right: 10px;
+    width: 44px;
+    height: 44px;
+    z-index: 11;
+  }
+
+  .button_send {
+    position: static;
+    margin-bottom: 20px;
+    height: 44px;
+    width: 100%;
+    font-size: 14px;
+  }
+}

@@ -15,14 +15,11 @@ import { Loader } from "@/app/components/ui/Loader/Loader";
 import api from "@/app/api";
 import { SuccessModal } from "@/app/components/modals/SuccessModal/SuccessModal";
 import { ErrorsInput } from "@/app/components/ui/ErrorsInput/ErrorsInput";
-import { useRouter } from "next/navigation";
-import { NEWS_SHOW, PROFILE } from "@/app/navigate";
 
 interface Props {}
 
 export function NewsCreate({}: Props) {
   const { user } = useSelector((state: RootState) => state.auth);
-  const router = useRouter();
 
   const [title, setTitle] = useState<string>("");
   const [categories, setCategories] = useState<number[]>([]);
@@ -58,7 +55,7 @@ export function NewsCreate({}: Props) {
         categories,
         content,
       })
-      .then((data) => {
+      .then(() => {
         setSuccessSubmit(true);
         setTimeout(() => {
           if (typeof window !== "undefined") {

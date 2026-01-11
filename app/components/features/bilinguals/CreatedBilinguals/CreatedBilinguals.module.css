@@ -5,3 +5,9 @@
   row-gap: 44px;
   max-width: 1400px;
 }
+
+@media (max-width: 1199px) {
+  .items {
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  }
+}

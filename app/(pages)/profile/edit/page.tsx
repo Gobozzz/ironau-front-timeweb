@@ -16,7 +16,9 @@ export default function ProfileEdit() {
   return (
     <AuthLayout>
       <IndexLayout>
-        <LogoutButton />
+        <div className="max-[1200px]:hidden">
+          <LogoutButton />
+        </div>
         <div className="">
           <PageTitle>Редактирование данных</PageTitle>
           <UpdatePersonal />
